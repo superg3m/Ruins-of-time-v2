@@ -34,7 +34,7 @@ public class PlayerInput : MonoBehaviour
         #endregion
 
         #region KeyInput
-        // Checks what the player's last directional key was and sets dash respectively
+        // Checks what the player's last directional key was and sets Roll respectively
         if (Input.GetKey(KeyCode.W)) lastKey = KeyCode.W;
 
         else if (Input.GetKey(KeyCode.S)) lastKey = KeyCode.S;
