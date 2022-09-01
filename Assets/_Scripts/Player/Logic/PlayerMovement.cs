@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -40,13 +41,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerInput.isRolling)
         {
-            if (playerInput.key == KeyCode.W) transform.position += new Vector3(playerInput.movementX, dashDistance, 0);
+            switch (playerInput.key)
+            {
+                case KeyCode.W:
+                    transform.position += new Vector3(playerInput.movementX, dashDistance, 0);
+                    break;
 
-            else if (playerInput.key == KeyCode.A) transform.position += new Vector3(-dashDistance, playerInput.movementY, 0);
+                case KeyCode.A:
+                    transform.position += new Vector3(-dashDistance, playerInput.movementY, 0);
+                    break;
 
-            else if (playerInput.key == KeyCode.S) transform.position += new Vector3(playerInput.movementX, -dashDistance, 0);
+                case KeyCode.S:
+                    transform.position += new Vector3(playerInput.movementX, -dashDistance, 0);
+                    break;
 
-            else if (playerInput.key == KeyCode.D) transform.position += new Vector3(dashDistance, playerInput.movementY, 0);
+                case KeyCode.D:
+                    transform.position += new Vector3(dashDistance, playerInput.movementY, 0);
+                    break;
+            }
         }
     }
     private void OnApplicationQuit()
