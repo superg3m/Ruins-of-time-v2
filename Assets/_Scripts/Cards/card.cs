@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+[System.Serializable]
+public class Card
 {
     public int cardID;
     public int manaCost;

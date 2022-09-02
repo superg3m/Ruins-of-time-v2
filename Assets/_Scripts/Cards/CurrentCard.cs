@@ -8,7 +8,7 @@ using TMPro;
 public class CurrentCard : MonoBehaviour
 {
     public List<Card> currentCard = new List<Card>();
-    
+
     public int currentID;
 
     public int id;
@@ -26,16 +26,19 @@ public class CurrentCard : MonoBehaviour
     public TMP_Text descriptionText;
     public Image bannerColor;
 
-
+    private void Awake()
+    {
+        currentID = Random.Range(0, 4);
+    }
 
     void Start()
     {
-        currentCard[0] = CardDataBase.cardList[currentID];
+        currentCard[0] = CardDataBase.cardList[0];
     }
 
     void Update()
     {
-        currentID = System.Math.Clamp(currentID, 0, CardDataBase.cardList.Count - 1);
+        currentID = System.Math.Clamp(currentID, 0, CardDataBase.cardList.Length-1);
 
         
 
