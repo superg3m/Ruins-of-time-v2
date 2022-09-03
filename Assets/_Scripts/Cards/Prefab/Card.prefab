@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6633282004521316845}
   - component: {fileID: 8876280197120587778}
   - component: {fileID: 2423296983120490116}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4311536318063514434}
   - component: {fileID: 1115606026640752571}
   - component: {fileID: 3011836173109949042}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Card Image Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3123496710535542575}
   - component: {fileID: 7383605394134600648}
   - component: {fileID: 838806251911265411}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5187973544420800668}
   - component: {fileID: 1848683333927986710}
   - component: {fileID: 3505596017685915665}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Card Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 6948315926730909194}
   - component: {fileID: 610586889675360274}
   - component: {fileID: 900290207198528223}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 5407523283571780512}
   - component: {fileID: 6575603679537241342}
   - component: {fileID: 1046185018417500128}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 2968387078223377442}
   - component: {fileID: 2364530163230170264}
   - component: {fileID: 9165687871371200366}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: White Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 4428316896697335478}
   - component: {fileID: 7917892931322479986}
   - component: {fileID: 879951872454548526}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 6299924145844383215}
   - component: {fileID: 2525834316856243997}
   - component: {fileID: 8681818930010985508}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Card Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 3492395072895346894}
   - component: {fileID: 6109690943675686397}
   - component: {fileID: 8835949156090354036}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Main Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 8363609287231062128}
   - component: {fileID: 3109952702457023543}
   - component: {fileID: 778184914683324775}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 6083094146024350178}
   - component: {fileID: 4448692974816395736}
   - component: {fileID: 3548493177638348106}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Mana Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 898611378636213387}
   - component: {fileID: 7108686145845882465}
   - component: {fileID: 1639544730290490233}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1277,7 +1277,7 @@ GameObject:
   - component: {fileID: 503593306553485137}
   - component: {fileID: 4691324860183681965}
   - component: {fileID: 2872614235960361160}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1411,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6716740231811798007}
   - component: {fileID: 8923992169711870848}
-  m_Layer: 0
+  - component: {fileID: 8895819200174932628}
+  - component: {fileID: 3115434510660028796}
+  m_Layer: 11
   m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,6 +1470,53 @@ MonoBehaviour:
   classificationText: {fileID: 778184914683324775}
   descriptionText: {fileID: 879951872454548526}
   bannerColor: {fileID: 838806251911265411}
+--- !u!50 &8895819200174932628
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611062332037312962}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &3115434510660028796
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611062332037312962}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 192.5, y: 292.5}
+  m_EdgeRadius: 0
 --- !u!1 &8948003761460465541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1528,7 @@ GameObject:
   - component: {fileID: 6759487452927476617}
   - component: {fileID: 9106236451997804647}
   - component: {fileID: 5430686486909637119}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Card Description box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
