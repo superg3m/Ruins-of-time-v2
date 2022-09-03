@@ -6,8 +6,7 @@ using UnityEngine;
 public class SpawnCard : MonoBehaviour
 {
     public GameObject card;
-    public DrawCards drawCards;
-    public Canvas canvas;
+    public GameObject hand;
     private GameObject newCard;
     [SerializeField] private Transform spawnPoint;
 
@@ -20,6 +19,6 @@ public class SpawnCard : MonoBehaviour
     {
         
         Destroy(newCard);
-        newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, canvas.transform);
+        newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
     }
 }

@@ -7,18 +7,37 @@ using UnityEngine.EventSystems;
 public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject card;
-    [SerializeField] private GameObject target;
+    [SerializeField] private GameObject backOfCard;
+    [SerializeField] private Button targetButton;
     [SerializeField] private Image cardBorder;
+    
+    private void Update()
+    {
+        if (gameObject.layer == 11 && Input.GetKeyDown(KeyCode.F))
+        {
+            if (backOfCard.activeInHierarchy) backOfCard.SetActive(false);
+            else
+            {
+                backOfCard.SetActive(true);
+            }
+        }
+    }
+    public void ActivateCard()
+    {
+        //Menu to use and cancel card stuff
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        target.transform.localScale = new Vector3(1.05f, 1.15f, 1f);
+        gameObject.layer = 11;
+        targetButton.transform.localScale = new Vector3(1.05f, 1.15f, 1f);
         card.transform.position = new Vector3(card.transform.position.x, card.transform.position.y + 15, card.transform.position.z);
         cardBorder.color = Color.red;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        target.transform.localScale = new Vector3(1.05f, 1.00f, 1f);
+        gameObject.layer = 0;
+        targetButton.transform.localScale = new Vector3(1.05f, 1.00f, 1f);
         card.transform.position = new Vector3(card.transform.position.x, card.transform.position.y - 15, card.transform.position.z);
         cardBorder.color = Color.black;
     }
