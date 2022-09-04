@@ -707,8 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36c43fae5796b341be82680d6d72056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCard:
-  - {fileID: 0}
+  currentCard: []
   currentID: 0
   id: 0
   manaCost: 0
@@ -716,13 +715,10 @@ MonoBehaviour:
   cardName: 
   value: 0
   cardDescription: 
-  cardImage: {fileID: 0}
-  image: {fileID: 93734523845178293}
   manaCostText: {fileID: 2488446599445968074}
   nameText: {fileID: 2088617775437810873}
   classificationText: {fileID: 4251934863877778840}
   descriptionText: {fileID: 5889737387039936326}
-  bannerColor: {fileID: 218865312916175475}
 --- !u!1 &5456703912966032087
 GameObject:
   m_ObjectHideFlags: 0

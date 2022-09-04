@@ -9,9 +9,13 @@ public class DeckGenerator : MonoBehaviour
     [SerializeField] private CardBaseObject[] cache;
     int maxID;
     public int deckSize;
-    private void Start()
+    private void Awake()
     {
         cardList = Resources.LoadAll<CardBaseObject>("Scriptable Objects/Card Objects");
+    }
+    private void Start()
+    {
+        
         cardList = cardList.OrderBy(x => x.cardID).ToArray();
         cache = new CardBaseObject[cardList.Length];
         deckSize = cardList.Length;
