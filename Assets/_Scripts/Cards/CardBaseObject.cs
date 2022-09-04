@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "CardDataBase/Card Data")]
-public class CardBaseObject : ScriptableObject {
+public class CardBaseObject : ScriptableObject
+{
     public int cardID;
     public int manaCost;
     public string classification;
