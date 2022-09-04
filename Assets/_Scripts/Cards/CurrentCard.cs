@@ -7,7 +7,7 @@ using TMPro;
 
 public class CurrentCard : MonoBehaviour
 {
-    public List<Card> currentCard = new List<Card>();
+    public List<CardBaseObject> currentCard = new List<CardBaseObject>();
 
     public int currentID;
 
@@ -17,7 +17,7 @@ public class CurrentCard : MonoBehaviour
     public string cardName;
     public int value;
     public string cardDescription;
-    public string imageFilePath;
+    public Sprite cardImage;
 
     public Image image;
     public TMP_Text manaCostText;
@@ -28,21 +28,19 @@ public class CurrentCard : MonoBehaviour
 
     private void Awake()
     {
-        currentID = Random.Range(0, 4);
+        currentID = Random.Range(0, DeckGenerator.cardList.Length - 1);
     }
 
     void Start()
     {
-        currentCard[0] = CardDataBase.cardList[0];
+        currentCard.Add(DeckGenerator.cardList[0]);
     }
 
     void Update()
     {
-        currentID = System.Math.Clamp(currentID, 0, CardDataBase.cardList.Length-1);
+        currentID = System.Math.Clamp(currentID, 0, DeckGenerator.cardList.Length-1);
 
-        
-
-        currentCard[0] = CardDataBase.cardList[currentID];
+        currentCard[0] = DeckGenerator.cardList[currentID];
         id = currentCard[0].cardID;
 
         manaCost = currentCard[0].manaCost;
@@ -50,14 +48,24 @@ public class CurrentCard : MonoBehaviour
         classification = currentCard[0].classification;
         value = currentCard[0].value;
         cardDescription = currentCard[0].cardDescription;
-        imageFilePath = currentCard[0].imageFilePath;
+        image.sprite = currentCard[0].cardImage;
 
-        image.sprite = Resources.Load<Sprite>(imageFilePath);
-
-        if (classification != "Offensive") bannerColor.color = Color.blue;
-        else
+        switch(classification)
         {
-            bannerColor.color = Color.red;
+            case "Offensive":
+                bannerColor.color = Color.red;
+                break;
+            case "Defensive":
+                bannerColor.color = Color.blue;
+                break;
+            case "Alteration":
+                bannerColor.color = Color.magenta;
+                break;
+            case "Status":
+                bannerColor.color = new Color(0, .5f, 0);
+                break;
+
+
         }
 
         manaCostText.text = "" + manaCost;

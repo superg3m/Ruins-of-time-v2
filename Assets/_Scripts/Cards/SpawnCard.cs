@@ -10,11 +10,6 @@ public class SpawnCard : MonoBehaviour
     private GameObject newCard;
     [SerializeField] private Transform spawnPoint;
 
-    public void Start()
-    {
-        
-        
-    }
     public void buttonPress()
     {
         
