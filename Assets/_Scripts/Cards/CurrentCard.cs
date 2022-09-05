@@ -17,6 +17,7 @@ public class CurrentCard : MonoBehaviour
     public string cardName;
     public int value;
     public string cardDescription;
+
     public Sprite cardImage;
 
     public Image image;

@@ -1,20 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.XR;
 
 public class DeckGenerator : MonoBehaviour
 {
     public static CardBaseObject[] cardList;
     [SerializeField] private CardBaseObject[] cache;
-    int maxID;
+
+    [SerializeField] private List<GameObject> displayDeckSize = new List<GameObject>();
+
+    public GameObject backCoverPrefab;
+    public GameObject deckPos;
+    public Transform buttonPos;
+    public Transform spawnPoint;
+    public Transform originalSpawnPoint;
+
+
+    public int cardCount;
+    public float subtractXBy;
     public int deckSize;
+
     private void Awake()
     {
         cardList = Resources.LoadAll<CardBaseObject>("Scriptable Objects/Card Objects");
     }
     private void Start()
     {
+        originalSpawnPoint.transform.position = spawnPoint.transform.position;
         
         cardList = cardList.OrderBy(x => x.cardID).ToArray();
         cache = new CardBaseObject[cardList.Length];
@@ -23,6 +38,30 @@ public class DeckGenerator : MonoBehaviour
         {
             cache[i] = cardList[i];
         }
+    }
+    private void Update()
+    {
+        if(cardCount != deckSize)
+        {
+            for (int i = 0; i < displayDeckSize.Count; i++)
+            {
+                Destroy(displayDeckSize[i]);
+            }
+            cardCount = 0;
+            subtractXBy = .5f;
+            displayDeckSize.Clear();
+            for (int i = 0; i < deckSize; i++)
+            {
+                subtractXBy -= 0;
+                displayDeckSize.Add(Instantiate(backCoverPrefab, spawnPoint.position, spawnPoint.rotation, deckPos.transform));
+                spawnPoint.transform.position = new Vector3((spawnPoint.transform.position.x) - subtractXBy, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
+                cardCount++;
+            }
+            buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
+            spawnPoint.transform.position = originalSpawnPoint.transform.position;
+        }
+        
+        
     }
     public void shuffle()
     {
