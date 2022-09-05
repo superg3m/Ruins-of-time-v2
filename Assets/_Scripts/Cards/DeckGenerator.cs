@@ -8,7 +8,7 @@ using UnityEngine.XR;
 public class DeckGenerator : MonoBehaviour
 {
     public static CardBaseObject[] cardList;
-    [SerializeField] private CardBaseObject[] cache;
+    private CardBaseObject[] cache;
 
     [SerializeField] private List<GameObject> displayDeckSize = new List<GameObject>();
 
@@ -45,6 +45,7 @@ public class DeckGenerator : MonoBehaviour
         {
             for (int i = 0; i < displayDeckSize.Count; i++)
             {
+                
                 Destroy(displayDeckSize[i]);
             }
             cardCount = 0;

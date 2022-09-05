@@ -27,13 +27,9 @@ public class CurrentCard : MonoBehaviour
     public TMP_Text descriptionText;
     public Image bannerColor;
 
-    private void Awake()
-    {
-        currentID = Random.Range(0, DeckGenerator.cardList.Length - 1);
-    }
-
     void Start()
     {
+        currentID = Random.Range(0, DeckGenerator.cardList.Length - 1);
         currentCard.Add(DeckGenerator.cardList[0]);
     }
 

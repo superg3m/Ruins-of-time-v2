@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+
     private RollCoolDown rollCooldown;
     private HealthSystem healthSystem;
     public GameObject inventoryPanel;
@@ -27,6 +29,7 @@ public class PlayerInput : MonoBehaviour
 
     private void InputProcessing()
     {
+        if(Input.GetKey(KeyCode.U)) SceneManager.LoadScene("Deck");
         #region Movement
         movementX = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
         movementY = Input.GetAxisRaw("Vertical") * Time.deltaTime;
