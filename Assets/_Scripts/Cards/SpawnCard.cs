@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// ============================================ Mostly finished Class ===============================================
+/// </summary>
 public class SpawnCard : MonoBehaviour
 {
     [SerializeField] private DeckGenerator deckGen;
     public GameObject card;
-    public GameObject hand;
+    private GameObject hand;
     private GameObject newCard;
     [SerializeField] private Transform spawnPoint;
 
     private void Awake()
     {
+        //Example of the GameObject being found
+        hand = GameObject.Find("Hand");
     }
     public void buttonPress()
     {

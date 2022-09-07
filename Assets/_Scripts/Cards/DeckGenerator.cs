@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEngine.XR;
 
+/// <summary>
+/// ============================================ Mostly finished Class =====================================================
+/// This Class need to have less public variables
+/// This class need to use GameObject.Find(" ") to refenece the GameObjects
+/// This class need to be broken into a shuffle class for the DisplayDeckSize list
+/// </summary>
 public class DeckGenerator : MonoBehaviour
 {
     public static CardBaseObject[] cardList;
@@ -45,7 +50,6 @@ public class DeckGenerator : MonoBehaviour
         {
             for (int i = 0; i < displayDeckSize.Count; i++)
             {
-                
                 Destroy(displayDeckSize[i]);
             }
             cardCount = 0;
