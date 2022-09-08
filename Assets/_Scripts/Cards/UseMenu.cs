@@ -30,5 +30,4 @@ public class UseMenu : MonoBehaviour
        useScreen.transform.SetAsFirstSibling();
        flipButton.transform.SetAsLastSibling();
     }
-
 }

@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
+/// <summary>
+/// ============================================ Mostly finished Class ================================================
+/// This Class need to have less public variables
+/// This class need to use GameObject.Find(" ") to refenece the GameObjects
+/// The switch statement need to be put into a differnt class called ChangeBannerColor line(55-69)
+/// </summary>
 public class CurrentCard : MonoBehaviour
 {
     public List<CardBaseObject> currentCard = new List<CardBaseObject>();
@@ -61,8 +66,6 @@ public class CurrentCard : MonoBehaviour
             case "Status":
                 bannerColor.color = new Color(0, .5f, 0);
                 break;
-
-
         }
 
         manaCostText.text = "" + manaCost;

@@ -26,6 +26,7 @@ public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
     private void Update()
     {
+        // Checks if the gameobject the script is attached too is on the 11th layer and if the key being pressed is F
         if (gameObject.layer == 11 && Input.GetKeyDown(KeyCode.F))
         {
             if (backOfCard.activeInHierarchy)
@@ -42,13 +43,19 @@ public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             }
         } 
     }
+
+    // This will need to be seperated into another class
+    // This method forces the gameobjects into a certain order on the hierarchy
     public void showUseButton()
     {
         useScreen.transform.SetAsLastSibling();
         flipButton.transform.SetAsFirstSibling();
         ActivateMenu.isShowingUseButton = true;
     }
-    
+
+    // This unity method calculates when your cursor is over the gameobject and changes the layer of it
+    // It also increases the y-value of the card and changes the color to red
+    // This gives off the illusion that the card is being selected
     public void OnPointerEnter(PointerEventData eventData)
     {
         gameObject.layer = 11;
@@ -57,6 +64,7 @@ public class HoverOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         cardBorder.color = Color.red;
     }
 
+    // This unity method calculates when your cursor is off the gameobject and reverts all the changes that happened
     public void OnPointerExit(PointerEventData eventData)
     {
         gameObject.layer = 0;
