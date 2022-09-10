@@ -22,7 +22,7 @@ public class DeckGenerator : MonoBehaviour
     public Transform buttonPos;
     public Transform spawnPoint;
     public Transform originalSpawnPoint;
-
+    public static int listSize;
 
     public int cardCount;
     public float subtractXBy;
@@ -65,8 +65,7 @@ public class DeckGenerator : MonoBehaviour
             buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
             spawnPoint.transform.position = originalSpawnPoint.transform.position;
         }
-        
-        
+        listSize = displayDeckSize.Count;
     }
     public void shuffle()
     {
