@@ -48,7 +48,7 @@ public class DeckSize : MonoBehaviour
     }
     private void Start()
     {
-        for(int i = 0; i < cardList.Length; i++)
+        for (int i = 0; i < cardList.Length; i++)
         {
             cards.Add(cardList[i]);
         }
@@ -59,7 +59,7 @@ public class DeckSize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(deckSize <= 0 && tag == "Enemy")
+        if (deckSize <= 0 && tag == "Enemy")
         {
             deckSize = cardList.Length;
         }
