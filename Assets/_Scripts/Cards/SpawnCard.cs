@@ -17,12 +17,28 @@ public class SpawnCard : MonoBehaviour
     private void Awake()
     {
         //Example of the GameObject being found
-        hand = GameObject.Find("Hand");
+        if (tag == "Player")
+        {
+            hand = GameObject.Find("Hand");
+        }
+        else if (tag == "Enemy")
+        {
+            hand = GameObject.Find("EnemyHand");
+        }
     }
     public void buttonPress()
     {
-        Destroy(newCard);
-        newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
-        deckGen.deckSize -= 1;
+        if (tag == "Player")
+        {
+            Destroy(newCard);
+            newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
+            DeckGenerator.playerDeckSize -= 1;
+        }
+        else if(tag == "Enemy")
+        {
+            Destroy(newCard);
+            newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
+            DeckGenerator.enemyDeckSize -= 1;
+        }
     }
 }

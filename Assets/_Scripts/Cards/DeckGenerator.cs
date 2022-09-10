@@ -12,8 +12,13 @@ using System.Linq;
 /// </summary>
 public class DeckGenerator : MonoBehaviour
 {
-    public static CardBaseObject[] cardList;
+    public static CardBaseObject[] playerCardList;
+    public static CardBaseObject[] enemyCardList;
     private CardBaseObject[] cache;
+
+    public List<GameObject> playerDeck = new List<GameObject>();
+
+    public  List<GameObject> enemyDeck = new List<GameObject>();
 
     [SerializeField] private List<GameObject> displayDeckSize = new List<GameObject>();
 
@@ -23,58 +28,131 @@ public class DeckGenerator : MonoBehaviour
     public Transform spawnPoint;
     public Transform originalSpawnPoint;
     public static int listSize;
+    public bool isCard;
 
-    public int cardCount;
+    public static int playerDeckSize;
+    public static int enemyDeckSize;
+
+    public int playerCardCount;
+    public int enemyCardCount;
     public float subtractXBy;
-    public int deckSize;
+    
 
     private void Awake()
     {
-        cardList = Resources.LoadAll<CardBaseObject>("Scriptable Objects/Card Objects");
+        backCoverPrefab = (GameObject)Resources.Load("Prefabs/Card/CardBack", typeof(GameObject));
+        originalSpawnPoint = GameObject.Find("OriginalSpawnPoint").transform;
+
+        if (tag == "Player")
+        {
+            displayDeckSize = playerDeck;
+            buttonPos = GameObject.Find("DeckButton").transform;
+            spawnPoint = GameObject.Find("SpawnPoint").transform;
+            playerCardList = Resources.LoadAll<CardBaseObject>("Scriptable Objects/Card Objects");
+            deckPos = GameObject.Find("Deck");
+            originalSpawnPoint = GameObject.Find("OriginalSpawnPoint").transform;
+        }
+
+        else if (tag == "Enemy")
+        {
+            displayDeckSize = enemyDeck;
+            spawnPoint = GameObject.Find("EnemySpawnPoint").transform;
+            buttonPos = GameObject.Find("EnemyDeckButton").transform;
+            enemyCardList = Resources.LoadAll<CardBaseObject>("Scriptable Objects/EnemyCardObjects");
+            deckPos = GameObject.Find("EnemyDeck");
+            originalSpawnPoint = GameObject.Find("EnemyOriginalSpawnPoint").transform;
+        }
     }
     private void Start()
     {
-        originalSpawnPoint.transform.position = spawnPoint.transform.position;
-        
-        cardList = cardList.OrderBy(x => x.cardID).ToArray();
-        cache = new CardBaseObject[cardList.Length];
-        deckSize = cardList.Length;
-        for(int i = 0; i < cardList.Length; i++)
+        if (!isCard)
         {
-            cache[i] = cardList[i];
+            if (tag == "Player")
+            {
+                originalSpawnPoint.transform.position = spawnPoint.transform.position;
+
+                playerCardList = playerCardList.OrderBy(x => x.cardID).ToArray();
+                cache = new CardBaseObject[playerCardList.Length];
+                playerDeckSize = playerCardList.Length;
+                for (int i = 0; i < playerCardList.Length; i++)
+                {
+                    cache[i] = playerCardList[i];
+                }
+            }
+            else if (tag == "Enemy")
+            {
+                originalSpawnPoint.transform.position = spawnPoint.transform.position;
+
+                enemyCardList = enemyCardList.OrderBy(x => x.cardID).ToArray();
+                cache = new CardBaseObject[enemyCardList.Length];
+                enemyDeckSize = enemyCardList.Length;
+                for (int i = 0; i < enemyCardList.Length; i++)
+                {
+                    cache[i] = enemyCardList[i];
+                }
+            }
         }
     }
     private void Update()
     {
-        if(cardCount != deckSize)
+        if (!isCard)
         {
-            for (int i = 0; i < displayDeckSize.Count; i++)
+            if (tag == "Player")
             {
-                Destroy(displayDeckSize[i]);
+                if (playerCardCount != playerDeckSize)
+                {
+                    for (int i = 0; i < displayDeckSize.Count; i++)
+                    {
+                        Destroy(displayDeckSize[i]);
+                    }
+                    playerCardCount = 0;
+                    subtractXBy = .5f;
+                    displayDeckSize.Clear();
+                    for (int i = 0; i < playerDeckSize; i++)
+                    {
+                        subtractXBy -= 0;
+                        displayDeckSize.Add(Instantiate(backCoverPrefab, spawnPoint.position, spawnPoint.rotation, deckPos.transform));
+                        spawnPoint.transform.position = new Vector3((spawnPoint.transform.position.x) - subtractXBy, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
+                        playerCardCount++;
+                    }
+                    buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
+                    spawnPoint.transform.position = originalSpawnPoint.transform.position;
+                }
+                listSize = displayDeckSize.Count;
             }
-            cardCount = 0;
-            subtractXBy = .5f;
-            displayDeckSize.Clear();
-            for (int i = 0; i < deckSize; i++)
+            else if (tag == "Enemy")
             {
-                subtractXBy -= 0;
-                displayDeckSize.Add(Instantiate(backCoverPrefab, spawnPoint.position, spawnPoint.rotation, deckPos.transform));
-                spawnPoint.transform.position = new Vector3((spawnPoint.transform.position.x) - subtractXBy, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
-                cardCount++;
+                if (enemyCardCount != enemyDeckSize)
+                {
+                    for (int i = 0; i < displayDeckSize.Count; i++)
+                    {
+                        Destroy(displayDeckSize[i]);
+                    }
+                    enemyCardCount = 0;
+                    subtractXBy = .5f;
+                    displayDeckSize.Clear();
+                    for (int i = 0; i < enemyDeckSize; i++)
+                    {
+                        subtractXBy -= 0;
+                        displayDeckSize.Add(Instantiate(backCoverPrefab, spawnPoint.position, spawnPoint.rotation, deckPos.transform));
+                        spawnPoint.transform.position = new Vector3((spawnPoint.transform.position.x) - subtractXBy, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
+                        enemyCardCount++;
+                    }
+                    buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
+                    spawnPoint.transform.position = originalSpawnPoint.transform.position;
+                }
+                listSize = displayDeckSize.Count;
             }
-            buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
-            spawnPoint.transform.position = originalSpawnPoint.transform.position;
         }
-        listSize = displayDeckSize.Count;
     }
     public void shuffle()
     {
-        for (int i = 0; i < cardList.Length; i++)
+        for (int i = 0; i < playerCardList.Length; i++)
         {
-            cardList[0] = cache[i];
-            int randomIndex = Random.Range(i, deckSize);
+            playerCardList[0] = cache[i];
+            int randomIndex = Random.Range(i, playerDeckSize);
             cache[i] = cache[randomIndex];
-            cache[randomIndex] = cardList[0];
+            cache[randomIndex] = playerCardList[0];
         }
     }
 }

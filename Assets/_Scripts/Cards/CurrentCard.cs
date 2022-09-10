@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.XR;
 
 /// <summary>
 /// ============================================ Mostly finished Class ================================================
@@ -12,6 +13,7 @@ using TMPro;
 /// </summary>
 public class CurrentCard : MonoBehaviour
 {
+
     public List<CardBaseObject> currentCard = new List<CardBaseObject>();
 
     public int currentID;
@@ -34,43 +36,91 @@ public class CurrentCard : MonoBehaviour
 
     void Start()
     {
-        currentID = Random.Range(0, DeckGenerator.cardList.Length - 1);
-        currentCard.Add(DeckGenerator.cardList[0]);
+        if (transform.parent.tag == "Player")
+        {
+            currentID = Random.Range(0, DeckGenerator.playerCardList.Length - 1);
+            currentCard.Add(DeckGenerator.playerCardList[0]);
+        }
+        else if (transform.parent.tag == "Enemy")
+        {
+            currentID = Random.Range(0, DeckGenerator.enemyCardList.Length - 1);
+            currentCard.Add(DeckGenerator.enemyCardList[0]);
+        }
     }
 
     void Update()
     {
-        currentID = System.Math.Clamp(currentID, 0, DeckGenerator.cardList.Length-1);
-
-        currentCard[0] = DeckGenerator.cardList[currentID];
-        id = currentCard[0].cardID;
-
-        manaCost = currentCard[0].manaCost;
-        cardName = currentCard[0].cardName;
-        classification = currentCard[0].classification;
-        value = currentCard[0].value;
-        cardDescription = currentCard[0].cardDescription;
-        image.sprite = currentCard[0].cardImage;
-
-        switch(classification)
+        if (transform.parent.tag == "Player")
         {
-            case "Offensive":
-                bannerColor.color = Color.red;
-                break;
-            case "Defensive":
-                bannerColor.color = Color.blue;
-                break;
-            case "Alteration":
-                bannerColor.color = Color.magenta;
-                break;
-            case "Status":
-                bannerColor.color = new Color(0, .5f, 0);
-                break;
+            currentID = System.Math.Clamp(currentID, 0, DeckGenerator.playerCardList.Length - 1);
+
+            currentCard[0] = DeckGenerator.playerCardList[currentID];
+            id = currentCard[0].cardID;
+
+            manaCost = currentCard[0].manaCost;
+            cardName = currentCard[0].cardName;
+            classification = currentCard[0].classification;
+            value = currentCard[0].value;
+            cardDescription = currentCard[0].cardDescription;
+            image.sprite = currentCard[0].cardImage;
+
+            switch (classification)
+            {
+                case "Offensive":
+                    bannerColor.color = Color.red;
+                    break;
+                case "Defensive":
+                    bannerColor.color = Color.blue;
+                    break;
+                case "Alteration":
+                    bannerColor.color = Color.magenta;
+                    break;
+                case "Status":
+                    bannerColor.color = new Color(0, .5f, 0);
+                    break;
+            }
+
+            manaCostText.text = "" + manaCost;
+            nameText.text = "" + cardName;
+            classificationText.text = "" + classification;
+            descriptionText.text = "" + cardDescription;
         }
 
-        manaCostText.text = "" + manaCost;
-        nameText.text = "" + cardName;
-        classificationText.text = "" + classification;
-        descriptionText.text = "" + cardDescription;
+        else if (transform.parent.tag == "Enemy")
+        {
+            currentID = System.Math.Clamp(currentID, 0, DeckGenerator.enemyCardList.Length - 1);
+
+            currentCard[0] = DeckGenerator.enemyCardList[currentID];
+            id = currentCard[0].cardID;
+
+            manaCost = currentCard[0].manaCost;
+            cardName = currentCard[0].cardName;
+            classification = currentCard[0].classification;
+            value = currentCard[0].value;
+            cardDescription = currentCard[0].cardDescription;
+            image.sprite = currentCard[0].cardImage;
+
+            switch (classification)
+            {
+                case "Offensive":
+                    bannerColor.color = Color.red;
+                    break;
+                case "Defensive":
+                    bannerColor.color = Color.blue;
+                    break;
+                case "Alteration":
+                    bannerColor.color = Color.magenta;
+                    break;
+                case "Status":
+                    bannerColor.color = new Color(0, .5f, 0);
+                    break;
+            }
+
+            manaCostText.text = "" + manaCost;
+            nameText.text = "" + cardName;
+            classificationText.text = "" + classification;
+            descriptionText.text = "" + cardDescription;
+        }
+        
     }
 }

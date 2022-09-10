@@ -1824,6 +1824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1515180382666268547}
   - component: {fileID: 5700276190055355664}
+  - component: {fileID: 8798157681450668374}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -1879,6 +1880,32 @@ MonoBehaviour:
   classificationText: {fileID: 5148319260536446849}
   descriptionText: {fileID: 1383857532561585377}
   bannerColor: {fileID: 8800990507688001053}
+--- !u!114 &8798157681450668374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577786865771584239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a24135bc0d73444b49fb4fd15427ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDeckSize: []
+  EnemyDeckSize: []
+  displayDeckSize: []
+  backCoverPrefab: {fileID: 0}
+  deckPos: {fileID: 0}
+  buttonPos: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  originalSpawnPoint: {fileID: 0}
+  isCard: 1
+  playerDeckSize: 0
+  enemyDeckSize: 0
+  playerCardCount: 0
+  enemyCardCount: 0
+  subtractXBy: 0
 --- !u!1 &6604051143909089862
 GameObject:
   m_ObjectHideFlags: 0
