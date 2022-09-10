@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 /// </summary>
 public class SpawnCard : MonoBehaviour
 {
+    public DeckSize deck;
+
     [SerializeField] private DeckGenerator deckGen;
     public GameObject card;
     private GameObject hand;
@@ -16,6 +18,7 @@ public class SpawnCard : MonoBehaviour
 
     private void Awake()
     {
+
         //Example of the GameObject being found
         if (tag == "Player")
         {
@@ -28,17 +31,8 @@ public class SpawnCard : MonoBehaviour
     }
     public void buttonPress()
     {
-        if (tag == "Player")
-        {
-            Destroy(newCard);
-            newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
-            DeckGenerator.playerDeckSize -= 1;
-        }
-        else if(tag == "Enemy")
-        {
-            Destroy(newCard);
-            newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
-            DeckGenerator.enemyDeckSize -= 1;
-        }
+        Destroy(newCard);
+        newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
+        deck.deckSize -= 1;
     }
 }

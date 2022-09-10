@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95fc00305e020d84cacd9311ba682cc6, type: 3}
-  m_Name: CardData
+  m_Name: CardData 0
   m_EditorClassIdentifier: 
   cardID: 0
   manaCost: 5
   classification: Offensive
-  cardName: Test
-  value: 4
-  cardDescription: sefesfsefesfse
-  cardImage: {fileID: 21300000, guid: 93dbc8f96dc6c00418ba8f1a8e8992e4, type: 3}
+  cardName: Bite
+  value: 6
+  cardDescription: Deal 6 <color=red>damage</color>
+  cardImage: {fileID: 21300000, guid: 323f69c69b523ed438bdd3b11691b1cb, type: 3}

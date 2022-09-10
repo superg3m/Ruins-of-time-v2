@@ -5,24 +5,15 @@ using UnityEngine.XR;
 
 public class BringToTheFront : MonoBehaviour
 {
-    public DeckGenerator deckGen;
+    public DeckSize deck;
     void Update()
     {
         StartCoroutine(waitASecond());  
     }
     IEnumerator waitASecond()
     {
-        if (tag == "Player")
-        {
-            transform.SetAsLastSibling();
-            yield return new WaitForSeconds(1);
-            if (DeckGenerator.playerDeckSize <= 0) gameObject.SetActive(false);
-        }
-        else if (tag == "Enemy")
-        {
-            transform.SetAsLastSibling();
-            yield return new WaitForSeconds(1);
-            if (DeckGenerator.enemyDeckSize <= 0) gameObject.SetActive(false);
-        }
+        transform.SetAsLastSibling();
+        yield return new WaitForSeconds(3);
+        if (deck.deckSize <= 0) gameObject.SetActive(false);
     }
 }
