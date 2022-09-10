@@ -123,8 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-TestingBranch
-Updated upstream
 --- !u!1 &65625121
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,11 +159,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -224.14}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
- master
 --- !u!1 &118508187
-
---- !u!1 &65625121
- Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,34 +167,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
- Updated upstream
   - component: {fileID: 118508188}
   - component: {fileID: 118508189}
   m_Layer: 0
   m_Name: SpawnPoint (5)
   m_TagString: Enemy
-
-  - component: {fileID: 65625122}
-  m_Layer: 5
-  m_Name: EnemyHealthBar
-  m_TagString: Untagged
- Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
- Updated upstream
 --- !u!4 &118508188
 Transform:
-
---- !u!224 &65625122
-RectTransform:
- Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
- Updated upstream
   m_GameObject: {fileID: 118508187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 550, y: 0, z: 0}
@@ -226,21 +207,6 @@ MonoBehaviour:
   deckGen: {fileID: 1860222962}
   card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
   spawnPoint: {fileID: 118508188}
-  m_GameObject: {fileID: 65625121}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 448032589}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -224.14}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
- Stashed changes
 --- !u!1 &196088182
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244875159}
+  - component: {fileID: 244875160}
   m_Layer: 0
   m_Name: SpawnPoint (5)
   m_TagString: Player
@@ -308,6 +275,22 @@ Transform:
   m_Father: {fileID: 1894873711}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244875160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244875158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1860222963}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 244875159}
 --- !u!1 &261071758
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +300,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261071759}
-  - component: {fileID: 261071760}
   m_Layer: 5
   m_Name: EnemySpawnPoint
   m_TagString: Untagged
@@ -340,6 +322,8 @@ RectTransform:
   - {fileID: 1639882956}
   - {fileID: 1694460510}
   - {fileID: 649784330}
+  - {fileID: 1012551859}
+  - {fileID: 118508188}
   m_Father: {fileID: 2004481484}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -348,24 +332,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 226.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &261071760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261071758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b401bf0ae6750324aacfe35d94819866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deck: {fileID: 448032591}
-  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
-  handList: []
-  spawnPoint6: {fileID: 1639882956}
-  spawnPoint7: {fileID: 1694460510}
-  spawnPoint8: {fileID: 649784330}
 --- !u!1 &382188871
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464155770}
+  - component: {fileID: 464155771}
   m_Layer: 0
   m_Name: SpawnPoint (1)
   m_TagString: Player
@@ -606,6 +573,22 @@ Transform:
   m_Father: {fileID: 1894873711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464155771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464155769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1860222963}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 464155770}
 --- !u!1 &552655935
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1894873712}
+      - m_Target: {fileID: 464155771}
         m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
         m_MethodName: buttonPress
         m_Mode: 1
@@ -873,8 +856,80 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 261071760}
-        m_TargetAssemblyTypeName: EnemySpawnCard, Assembly-CSharp
+      - m_Target: {fileID: 1912553086}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1120252125}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1426888197}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 244875160}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1639882957}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1694460511}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
+        m_MethodName: buttonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 649784331}
+        m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
         m_MethodName: buttonPress
         m_Mode: 1
         m_Arguments:
@@ -945,6 +1000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649784330}
+  - component: {fileID: 649784331}
   m_Layer: 0
   m_Name: SpawnPoint (3)
   m_TagString: Enemy
@@ -967,6 +1023,22 @@ Transform:
   m_Father: {fileID: 261071759}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649784331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649784329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 448032591}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 649784330}
 --- !u!1 &784241822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,11 +1143,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
- Updated upstream
 --- !u!1 &1012551858
-
---- !u!1 &1020049093
- Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1083,34 +1151,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
- Updated upstream
   - component: {fileID: 1012551859}
   - component: {fileID: 1012551860}
   m_Layer: 0
   m_Name: SpawnPoint (4)
   m_TagString: Enemy
-
-  - component: {fileID: 1020049094}
-  m_Layer: 5
-  m_Name: PlayerHealthBar
-  m_TagString: Untagged
- Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
- Updated upstream
 --- !u!4 &1012551859
 Transform:
-
---- !u!224 &1020049094
-RectTransform:
- Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
- Updated upstream
   m_GameObject: {fileID: 1012551858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 275, y: 0, z: 0}
@@ -1136,8 +1191,6 @@ MonoBehaviour:
   deckGen: {fileID: 1860222962}
   card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
   spawnPoint: {fileID: 1012551859}
- TestingBranch
-
 --- !u!1 &1020049093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1213,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
- master
   m_GameObject: {fileID: 1020049093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1175,10 +1227,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 226.84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
- TestingBranch
- Stashed changes
-
- master
 --- !u!1 &1120252123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120252124}
+  - component: {fileID: 1120252125}
   m_Layer: 0
   m_Name: SpawnPoint (3)
   m_TagString: Player
@@ -1210,6 +1259,22 @@ Transform:
   m_Father: {fileID: 1894873711}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1120252125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120252123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1860222963}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 1120252124}
 --- !u!1 &1156352419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 333.45}
+  m_AnchoredPosition: {x: 0, y: -392.77}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1426888195
@@ -1411,6 +1476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426888196}
+  - component: {fileID: 1426888197}
   m_Layer: 0
   m_Name: SpawnPoint (4)
   m_TagString: Player
@@ -1433,6 +1499,22 @@ Transform:
   m_Father: {fileID: 1894873711}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1426888197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426888195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1860222963}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 1426888196}
 --- !u!1 &1639882955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639882956}
+  - component: {fileID: 1639882957}
   m_Layer: 0
   m_Name: SpawnPoint (1)
   m_TagString: Enemy
@@ -1464,6 +1547,22 @@ Transform:
   m_Father: {fileID: 261071759}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639882957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639882955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 448032591}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 1639882956}
 --- !u!1 &1694460509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1694460510}
+  - component: {fileID: 1694460511}
   m_Layer: 0
   m_Name: SpawnPoint (2)
   m_TagString: Enemy
@@ -1495,6 +1595,22 @@ Transform:
   m_Father: {fileID: 261071759}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694460511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694460509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 448032591}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 1694460510}
 --- !u!1 &1860222960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,10 +1696,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894873711}
-  - component: {fileID: 1894873712}
   m_Layer: 5
   m_Name: SpawnPoints
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,26 +1728,6 @@ RectTransform:
   m_AnchoredPosition: {x: -245.42, y: -265.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1894873712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894873710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deck: {fileID: 1860222963}
-  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
-  handList: []
-  spawnPoint1: {fileID: 464155770}
-  spawnPoint2: {fileID: 1912553085}
-  spawnPoint3: {fileID: 1120252124}
-  spawnPoint4: {fileID: 1426888196}
-  spawnPoint5: {fileID: 244875159}
 --- !u!1 &1912553084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1912553085}
+  - component: {fileID: 1912553086}
   m_Layer: 0
   m_Name: SpawnPoint (2)
   m_TagString: Player
@@ -1664,6 +1760,22 @@ Transform:
   m_Father: {fileID: 1894873711}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1912553086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912553084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bec61643cc01a4f8b92035da5b11bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: {fileID: 1860222963}
+  deckGen: {fileID: 1860222962}
+  card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  spawnPoint: {fileID: 1912553085}
 --- !u!1 &2004481480
 GameObject:
   m_ObjectHideFlags: 0
