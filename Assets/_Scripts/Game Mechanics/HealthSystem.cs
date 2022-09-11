@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -12,16 +14,19 @@ public class HealthSystem : MonoBehaviour
 
     public float regenerationRate;
 
+    public TextMeshProUGUI healthReadout;
 
     public void Awake()
     {
         currentHealth = maxHealth;
         lastHitTimer = lastHitTime;
+        healthReadout.text = currentHealth.ToString();
     }
     public void Update()
     {
         CheckTimeSinceLastHit();
         RegenerateHealth(regenerationRate * Time.deltaTime);
+        healthReadout.text = currentHealth.ToString();
     }
 
     public void CheckTimeSinceLastHit()

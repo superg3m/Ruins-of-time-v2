@@ -14,6 +14,7 @@ public class SpawnCard : MonoBehaviour
     public GameObject card;
     private GameObject hand;
     private GameObject newCard;
+    public List<GameObject> cards;
     [SerializeField] private Transform spawnPoint;
 
     private void Awake()
@@ -33,6 +34,14 @@ public class SpawnCard : MonoBehaviour
     {
         Destroy(newCard);
         newCard = Instantiate(card, spawnPoint.position, spawnPoint.rotation, hand.transform);
+        for (int i = 4; i < 0; i--)
+        {
+            if (cards.Count < 5)
+            {
+                cards.Add(newCard);
+            }
+            
+        }
         deck.deckSize -= 1;
     }
 }
