@@ -149,7 +149,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useScreen: {fileID: 1055272074785446759}
   flipButton: {fileID: 2567138303622998678}
+  cardToSort: {fileID: 6577786865771584239}
+  cardToRemove: {fileID: 6577786865771584239}
+  combatSystem: {fileID: 0}
+  button: {fileID: 6633781675426327134}
   isUsingCard: 0
+  enemyHealth: {fileID: 0}
+  currentStatus: 
+  totalDamageSelected: 0
+  totalBlockSelected: 0
+  totalDodgeSelected: 0
 --- !u!1 &608591663904799230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1687,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useScreen: {fileID: 1055272074785446759}
   flipButton: {fileID: 2567138303622998678}
+  cardToSort: {fileID: 6577786865771584239}
+  cardToRemove: {fileID: 6577786865771584239}
+  combatSystem: {fileID: 0}
+  button: {fileID: 6633781675426327134}
   isUsingCard: 0
+  enemyHealth: {fileID: 0}
+  currentStatus: 
+  totalDamageSelected: 0
+  totalBlockSelected: 0
+  totalDodgeSelected: 0
 --- !u!1 &6428211382156872905
 GameObject:
   m_ObjectHideFlags: 0
