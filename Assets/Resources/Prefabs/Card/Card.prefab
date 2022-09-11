@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6026104399889075120}
+      - m_Target: {fileID: 11500000, guid: faf5eb2f7973e264692816e2743274d9, type: 3}
         m_TargetAssemblyTypeName: UseMenu, Assembly-CSharp
-        m_MethodName: cancelButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1096,6 +1096,7 @@ MonoBehaviour:
   flipButton: {fileID: 2567138303622998678}
   useButton: {fileID: 3193395428353178513}
   cardBorder: {fileID: 1036224285906281013}
+  combatSystem: {fileID: 0}
 --- !u!1 &3668306844810449677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1542,7 @@ GameObject:
   - component: {fileID: 8310106381301730840}
   - component: {fileID: 7664374511455264974}
   - component: {fileID: 6633781675426327134}
-  - component: {fileID: 4757879044902778978}
+  - component: {fileID: 6888879635974629696}
   m_Layer: 0
   m_Name: UseButton
   m_TagString: Untagged
@@ -1652,9 +1653,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4757879044902778978}
+      - m_Target: {fileID: 11500000, guid: faf5eb2f7973e264692816e2743274d9, type: 3}
         m_TargetAssemblyTypeName: UseMenu, Assembly-CSharp
-        m_MethodName: usingButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1664,7 +1665,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4757879044902778978
+--- !u!114 &6888879635974629696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
