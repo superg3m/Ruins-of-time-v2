@@ -18,7 +18,7 @@ public class UseMenu : MonoBehaviour
 
 
     // This method is used by the GameObject "UseButton" and is attached to the button componet
-    public void useButton()
+    public void usingButton()
     {
        isUsingCard = true;
     }
