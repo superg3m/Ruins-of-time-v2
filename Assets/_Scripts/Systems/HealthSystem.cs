@@ -11,6 +11,7 @@ public class HealthSystem : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public int currentBlock;
+    public int currentDodge;
 
     public int regenerationRate;
 
@@ -22,12 +23,8 @@ public class HealthSystem : MonoBehaviour
     public void Update()
     {
         RegenerateHealth(regenerationRate);
-        
-        if(currentBlock > 0) HealthText.text = String.Format("<color=green>{0}</color> + <color=blue>{1}</color> ", currentHealth, currentBlock);
-        else
-        {
-            HealthText.text = String.Format("<color=green>{0}</color>", currentHealth);
-        }
+
+        HealthText.text = String.Format("<color=green>{0}</color> + <color=blue>{1}</color> + <color=white>{2}</color>", currentHealth, currentBlock, currentDodge);
     }
 
     public void RegenerateHealth(int regenerationAmount)
@@ -50,5 +47,9 @@ public class HealthSystem : MonoBehaviour
     public void AddBlock(int amount)
     {
         currentBlock += amount;
+    }
+    public void AddDodge(int amount)
+    {
+        currentDodge += amount;
     }
 }

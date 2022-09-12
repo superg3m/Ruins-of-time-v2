@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 4
   classification: Offensive
   cardName: Claw
-  value: 5
+  attackValue: 5
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 5 <color=red>damage</color>
   cardImage: {fileID: 21300000, guid: 6fe6c2c2cf32ac34784c1a47620b0fac, type: 3}

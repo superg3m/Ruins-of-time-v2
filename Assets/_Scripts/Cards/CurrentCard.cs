@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.XR;
+using Newtonsoft.Json.Linq;
 
 /// <summary>
 /// ============================================ Mostly finished Class ================================================
@@ -22,7 +23,11 @@ public class CurrentCard : MonoBehaviour
     public int manaCost;
     public string classification;
     public string cardName;
-    public int value;
+    public int attackValue;
+    public int defenseValue;
+    public int dodgeValue;
+    public string status;
+    public int statusQuanity;
     public string cardDescription;
 
     public Sprite cardImage;
@@ -60,7 +65,11 @@ public class CurrentCard : MonoBehaviour
             manaCost = currentCard[0].manaCost;
             cardName = currentCard[0].cardName;
             classification = currentCard[0].classification;
-            value = currentCard[0].value;
+            attackValue = currentCard[0].attackValue;
+            defenseValue = currentCard[0].defenseValue;
+            dodgeValue = currentCard[0].dodgeValue;
+            status = currentCard[0].status;
+            statusQuanity = currentCard[0].statusQuanity;
             cardDescription = currentCard[0].cardDescription;
             image.sprite = currentCard[0].cardImage;
 
@@ -96,7 +105,11 @@ public class CurrentCard : MonoBehaviour
             manaCost = currentCard[0].manaCost;
             cardName = currentCard[0].cardName;
             classification = currentCard[0].classification;
-            value = currentCard[0].value;
+            attackValue = currentCard[0].attackValue;
+            defenseValue = currentCard[0].defenseValue;
+            dodgeValue = currentCard[0].dodgeValue;
+            status = currentCard[0].status;
+            statusQuanity = currentCard[0].statusQuanity;
             cardDescription = currentCard[0].cardDescription;
             image.sprite = currentCard[0].cardImage;
 

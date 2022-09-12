@@ -16,7 +16,11 @@ MonoBehaviour:
   manaCost: 8
   classification: Defensive
   cardName: Return to Sender
-  value: 0
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Allow the attack to hit but add half the <color=red>damage</color>
     to your next attack phase.
   cardImage: {fileID: 21300000, guid: 108ca3e7dda90d945b0914bf9259ec94, type: 3}

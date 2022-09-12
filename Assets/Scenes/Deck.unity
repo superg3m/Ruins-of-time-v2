@@ -208,13 +208,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
+  m_fontSizeMax: 100
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -312,6 +312,7 @@ MonoBehaviour:
   maxHealth: 30
   currentHealth: 0
   currentBlock: 0
+  currentDodge: 0
   regenerationRate: 0
 --- !u!1 &73698160
 GameObject:
@@ -1252,7 +1253,7 @@ MonoBehaviour:
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
   damageSystem: {fileID: 1629267215}
-  statusList: []
+  statusTracker: []
   totalDamageSelected: 0
   totalBlockSelected: 0
   totalDodgeSelected: 0
@@ -1440,13 +1441,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
+  m_fontSizeMax: 100
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1564,6 +1565,7 @@ MonoBehaviour:
   maxHealth: 75
   currentHealth: 0
   currentBlock: 0
+  currentDodge: 0
   regenerationRate: 0
 --- !u!1 &1120252123
 GameObject:
@@ -1874,7 +1876,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.6376136, g: 0.501513, b: 0.9245283, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.2642252, b: 0.2830189, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

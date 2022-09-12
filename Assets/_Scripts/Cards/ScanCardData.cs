@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,24 +13,12 @@ public class ScanCardData : MonoBehaviour
     public Button confirmButton;
 
     public string currentStatus;
-    public string description;
     public string type;
 
-
-    int value;
-    int totalDamageSelected;
-    int totalBlockSelected;
-    int totalDodgeSelected;
-
-    private List<string> possibleStatusList = new List<string>() {"burn", "heal", "poison", "bleeding", "vulnerable"};
-
-    private Dictionary<string, bool> statusDictionary = new Dictionary<string, bool>() {
-        {"burn", false},
-        {"heal", false},
-        {"poison", false},
-        {"bleeding", false},
-        {"vulnerable", false}
-    };
+    int statusQuantity;
+    int attackValue;
+    int defenseValue;
+    int dodgeValue;
 
     private void Awake()
     {
@@ -43,21 +32,6 @@ public class ScanCardData : MonoBehaviour
         confirmButton.onClick.AddListener(destoryObject);
     }
 
-    public void checkForStatus()
-    {
-        for (int i = 0; i < possibleStatusList.Count; i++)
-        {
-            string statusCheck = possibleStatusList[i];
-            statusDictionary[statusCheck] = description.Contains(statusCheck);
-            if(statusDictionary[statusCheck] == true)
-            {
-                currentStatus = statusCheck;
-                combatSystem.addStatuses(currentStatus);
-                combatSystem.addDamage(value);
-            }
-        }
-    }
-
     public void destoryObject()
     {
         if (gameObject.tag == "Selected") Destroy(this.gameObject);
@@ -68,53 +42,36 @@ public class ScanCardData : MonoBehaviour
     {
         if (useMenu.isUsingCard)
         {
-            description = cardToSort.descriptionText.text;
             type = cardToSort.classificationText.text;
-            value = cardToSort.value;
+            attackValue = cardToSort.attackValue;
+            defenseValue = cardToSort.defenseValue;
+            dodgeValue = cardToSort.dodgeValue;
+            currentStatus = cardToSort.status;
+            statusQuantity = cardToSort.statusQuanity;
 
-            if (type == "Offensive")
+            combatSystem.addDamage(attackValue);
+
+            combatSystem.BlockDamage(defenseValue);
+
+            combatSystem.DodgeDamage(dodgeValue);
+
+            if (currentStatus != "")
             {
-                combatSystem.addDamage(value);
-            }
-            else if (type == "Defensive")
-            {
-                bool hasBlock = description.Contains("block");
-                if (hasBlock)
-                {
-                    combatSystem.BlockDamage(value);
-                }
-                bool hasDodge = description.Contains("dodge");
-                if (hasDodge)
-                {
-                    combatSystem.DodgeDamage(value);
-                }
-            }
-            else if (type == "Status")
-            {
-                checkForStatus();
+                combatSystem.addStatuses(currentStatus, statusQuantity);
             }
             useMenu.setUsingBool(false);
         }
 
         if(useMenu.isCanceling)
         {
-            combatSystem.RemoveStatus(currentStatus);
+            if(currentStatus != "") combatSystem.RemoveStatus(currentStatus, statusQuantity);
 
-            if(combatSystem.totalDamageSelected > 0)
-            {
-                combatSystem.addDamage(-value);
-            }
+            if (combatSystem.totalDamageSelected > 0) combatSystem.addDamage(-attackValue);
 
-            if (combatSystem.totalBlockSelected > 0)
-            {
-                combatSystem.BlockDamage(-value);
-            }
+            if (combatSystem.totalBlockSelected > 0) combatSystem.BlockDamage(-defenseValue);
 
-            if (combatSystem.totalDodgeSelected > 0)
-            {
-                combatSystem.DodgeDamage(-value);
-            }
-            
+            if (combatSystem.totalDodgeSelected > 0) combatSystem.DodgeDamage(-dodgeValue);
+         
             useMenu.setCancelingBool(false);
         }
     }

@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 5
   classification: Offensive
   cardName: Hand Crossbow
-  value: 7
+  attackValue: 7
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 7 <color=red>damage</color>
   cardImage: {fileID: 21300000, guid: bbf8638a8a75d9c42b93639213c92c9b, type: 3}

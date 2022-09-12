@@ -56,6 +56,7 @@ public class DamageSystem : MonoBehaviour
             finalPlayerDamage = 0;
         }
         playerHealth.AddBlock(playerBlock);
+        playerHealth.AddDodge(playerDodge);
         enemyHealth.RemoveHealth(finalPlayerDamage);
         enemyHealth.Update();
         playerDamage = 0;

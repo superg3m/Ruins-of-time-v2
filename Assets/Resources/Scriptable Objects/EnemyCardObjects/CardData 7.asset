@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 6
   classification: Offensive
   cardName: Slam
-  value: 6
+  attackValue: 6
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 6 <color=red>damage</color> and set status <color=yellow>vulnerable</color>
   cardImage: {fileID: 21300000, guid: 5659b073e19871d4da7394b6456da365, type: 3}
