@@ -9,6 +9,15 @@ public class PlayerCombatSystem : MonoBehaviour
     public HealthSystem playerHealth;
     public DamageSystem damageSystem;
 
+
+    //  Status list needs to be a dictionary to track quanity
+    private Dictionary<string, int> statusDictionary = new Dictionary<string, int>() {
+        {"burn", 0},
+        {"heal", 0},
+        {"poison", 0},
+        {"bleeding", 0},
+        {"vulnerable", 0}
+    };
     public List<string> statusList;
     public int totalDamageSelected;
     public int totalBlockSelected;
@@ -23,11 +32,11 @@ public class PlayerCombatSystem : MonoBehaviour
     {
         totalDodgeSelected += damageToDodge;
     }
-    public void GatherDamage(int damageToAdd)
+    public void addDamage(int damageToAdd)
     {
         totalDamageSelected += damageToAdd;
     }
-    public void GatherStatuses(string statusToAdd)
+    public void addStatuses(string statusToAdd)
     {
         statusList.Add(statusToAdd);
     }

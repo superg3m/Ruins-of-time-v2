@@ -584,6 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371519771}
+  - component: {fileID: 371519772}
   m_Layer: 0
   m_Name: HealthSystem
   m_TagString: Untagged
@@ -606,6 +607,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &371519772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371519770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e4f7dbde58612459cafe36fc11c41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &382188871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1645,7 @@ GameObject:
   - component: {fileID: 1194122548}
   - component: {fileID: 1194122547}
   m_Layer: 5
-  m_Name: Confirm Button
+  m_Name: ConfirmButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1730,6 +1743,18 @@ MonoBehaviour:
       - m_Target: {fileID: 776992562}
         m_TargetAssemblyTypeName: PlayerCombatSystem, Assembly-CSharp
         m_MethodName: ClearData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 964034465639075883, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+        m_TargetAssemblyTypeName: ScanCardData, Assembly-CSharp
+        m_MethodName: destoryObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1849,7 +1874,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+  m_BackGroundColor: {r: 0.6376136, g: 0.501513, b: 0.9245283, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
