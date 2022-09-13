@@ -9,12 +9,12 @@ public class DamageSystem : MonoBehaviour
     public HealthSystem playerHealth;
 
     public int playerDamage;
-    private int playerBlock;
-    private int playerDodge;
+    public int playerBlock;
+    public int playerDodge;
 
-    private int monsterDamage;
-    private int monsterBlock;
-    private int monsterDodge;
+    public int monsterDamage;
+    public int monsterBlock;
+    public int monsterDodge;
 
     public void SetPlayerDamage(int incDamage)
     {
@@ -48,17 +48,33 @@ public class DamageSystem : MonoBehaviour
     {
 
     }
-    public void CalculateResults()
+    public void CalculateResults(bool playerCheck)
     {
-        int finalPlayerDamage = playerDamage - (monsterBlock + monsterDodge);
-        if (finalPlayerDamage < 0)
+        if (playerCheck)
         {
-            finalPlayerDamage = 0;
+            int finalPlayerDamage = playerDamage - (monsterBlock + monsterDodge);
+            if (finalPlayerDamage < 0)
+            {
+                finalPlayerDamage = 0;
+            }
+            playerHealth.AddBlock(playerBlock);
+            playerHealth.AddDodge(playerDodge);
+            enemyHealth.RemoveHealth(finalPlayerDamage);
+            enemyHealth.Update();
+            
         }
-        playerHealth.AddBlock(playerBlock);
-        playerHealth.AddDodge(playerDodge);
-        enemyHealth.RemoveHealth(finalPlayerDamage);
-        enemyHealth.Update();
+        else
+        {
+            int finalMonsterDamage = monsterDamage - (playerBlock + playerDodge);
+            if (finalMonsterDamage < 0)
+            {
+                finalMonsterDamage = 0;
+            }
+            enemyHealth.AddBlock(monsterBlock);
+            enemyHealth.AddDodge(monsterDodge);
+            playerHealth.RemoveHealth(finalMonsterDamage);
+            playerHealth.Update();
+        }
         playerDamage = 0;
         playerBlock = 0;
         playerDodge = 0;

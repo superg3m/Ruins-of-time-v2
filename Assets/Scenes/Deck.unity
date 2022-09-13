@@ -1115,6 +1115,42 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1020049095}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: clearData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1223230304}
+        m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
+        m_MethodName: ClearData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 776992562}
+        m_TargetAssemblyTypeName: PlayerCombatSystem, Assembly-CSharp
+        m_MethodName: ClearData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1894873712}
         m_TargetAssemblyTypeName: SpawnCard, Assembly-CSharp
         m_MethodName: buttonPress
@@ -1730,10 +1766,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1223230304}
+        m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
+        m_MethodName: ChooseCard
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1223230304}
+        m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
+        m_MethodName: SetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1629267215}
         m_TargetAssemblyTypeName: DamageSystem, Assembly-CSharp
         m_MethodName: CalculateResults
-        m_Mode: 1
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1629267215}
+        m_TargetAssemblyTypeName: DamageSystem, Assembly-CSharp
+        m_MethodName: CalculateResults
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1756,7 +1828,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 964034465639075883, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
         m_TargetAssemblyTypeName: ScanCardData, Assembly-CSharp
-        m_MethodName: destoryObject
+        m_MethodName: destroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1804,6 +1876,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194122545}
   m_CullTransparentMesh: 1
+--- !u!1 &1223230303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223230305}
+  - component: {fileID: 1223230304}
+  m_Layer: 0
+  m_Name: AICombatSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1223230304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223230303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169ca98e04c44ee4b8bf6dc5d2b73a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 65625123}
+  playerHealth: {fileID: 1020049095}
+  damageSystem: {fileID: 1629267215}
+  statusList: []
+  card: {fileID: 261071760}
+  hand: {fileID: 0}
+  cardChosen: {fileID: 0}
+  totalDamageSelected: 0
+  totalBlockSelected: 0
+  totalDodgeSelected: 0
+  statusTracker: []
+--- !u!4 &1223230305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223230303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282045519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,7 +2003,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.2642252, b: 0.2830189, a: 0}
+  m_BackGroundColor: {r: 0.3295657, g: 0.36535347, b: 0.4339623, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2023,6 +2150,11 @@ MonoBehaviour:
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
   playerDamage: 0
+  playerBlock: 0
+  playerDodge: 0
+  monsterDamage: 0
+  monsterBlock: 0
+  monsterDodge: 0
 --- !u!4 &1629267216
 Transform:
   m_ObjectHideFlags: 0
@@ -2232,6 +2364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deck: {fileID: 1860222963}
   card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
+  healthSystem: {fileID: 1020049095}
   handList: []
   spawnPoint1: {fileID: 464155770}
   spawnPoint2: {fileID: 1912553085}

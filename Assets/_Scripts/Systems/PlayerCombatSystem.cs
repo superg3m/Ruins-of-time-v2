@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using System.Xml;
 
 public class PlayerCombatSystem : MonoBehaviour
 {
@@ -45,40 +46,45 @@ public class PlayerCombatSystem : MonoBehaviour
     {
         totalDamageSelected += damageToAdd;
     }
+
+
+
     public void addStatuses(string statusToAdd, int quanity)
     {
-        statusTracker.Add(String.Format("{0} {1}x", statusToAdd, quanity));
-        /*
-        if (!statusTracker.Contains(statusToAdd))
+        if (statusDictionary[statusToAdd] == 0)
         {
-            
-            //statusDictionary[statusToAdd] += quanity;
+            statusTracker.Add(String.Format("{0} {1}x", statusToAdd, quanity));
+            statusDictionary[statusToAdd] += quanity;
         }
 
-        if(statusTracker.Contains(statusToAdd))
+        else if(statusDictionary[statusToAdd] > 0)
         {
-            statusTracker.Remove(String.Format("{0} {1}x", statusToAdd, quanity));
-            //statusDictionary[statusToAdd] += quanity;
-            statusTracker.Add(String.Format("{0} {1}x", statusToAdd, quanity));
+            statusTracker.Remove(String.Format("{0} {1}x", statusToAdd, statusDictionary[statusToAdd]));
+            statusDictionary[statusToAdd] += quanity;
+            statusTracker.Add(String.Format("{0} {1}x", statusToAdd, statusDictionary[statusToAdd]));
         }  
-        */
     }
     public void RemoveStatus(string statusToRemove, int quanity)
     {
-        statusTracker.Remove(String.Format("{0} {1}x", statusToRemove, quanity));
-        /*
-        if (statusTracker.Contains(statusToRemove))
+        statusTracker.Remove(String.Format("{0} {1}x", statusToRemove, statusDictionary[statusToRemove]));
+        statusDictionary[statusToRemove] -= quanity;
+        if (statusDictionary[statusToRemove] <= 0)
         {
-            statusTracker.Remove(String.Format("{0} {1}x", statusToRemove, quanity));
-            //statusDictionary[statusToRemove] -= quanity;
-            if (statusDictionary[statusToRemove] <= 0)
-            {
-
-            }
-            
+            statusTracker.Remove(String.Format("{0} {1}x", statusToRemove, statusDictionary[statusToRemove]));
         }
-        */
+        else
+        {
+            statusTracker.Add(String.Format("{0} {1}x", statusToRemove, statusDictionary[statusToRemove]));
+        }
+    }
 
+    public void lowerStatusQuantity(String statusToLower)
+    {
+        statusDictionary[statusToLower] -= 1;
+        if (statusDictionary[statusToLower] <= 0)
+        {
+            statusTracker.Remove(String.Format("{0} {1}x", statusToLower, statusDictionary[statusToLower]));
+        }
     }
 
     public void SetData()
@@ -96,7 +102,6 @@ public class PlayerCombatSystem : MonoBehaviour
         totalBlockSelected = 0;
         totalDamageSelected = 0;
         totalDodgeSelected = 0;
-        statusDictionary.Clear();
     }
     public void ClearStatus()
     {

@@ -29,10 +29,10 @@ public class ScanCardData : MonoBehaviour
     }
     private void Start()
     {
-        confirmButton.onClick.AddListener(destoryObject);
+        confirmButton.onClick.AddListener(destroyObject);
     }
 
-    public void destoryObject()
+    public void destroyObject()
     {
         if (gameObject.tag == "Selected") Destroy(this.gameObject);
     }
@@ -40,15 +40,14 @@ public class ScanCardData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        type = cardToSort.classificationText.text;
+        attackValue = cardToSort.attackValue;
+        defenseValue = cardToSort.defenseValue;
+        dodgeValue = cardToSort.dodgeValue;
+        currentStatus = cardToSort.status;
+        statusQuantity = cardToSort.statusQuanity;
         if (useMenu.isUsingCard)
         {
-            type = cardToSort.classificationText.text;
-            attackValue = cardToSort.attackValue;
-            defenseValue = cardToSort.defenseValue;
-            dodgeValue = cardToSort.dodgeValue;
-            currentStatus = cardToSort.status;
-            statusQuantity = cardToSort.statusQuanity;
-
             combatSystem.addDamage(attackValue);
 
             combatSystem.BlockDamage(defenseValue);

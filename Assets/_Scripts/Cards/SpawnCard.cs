@@ -13,6 +13,8 @@ public class SpawnCard : MonoBehaviour
 
     public GameObject card;
     private GameObject hand;
+    public  HealthSystem healthSystem;
+
     public List<GameObject> handList = new List<GameObject>();
     [SerializeField] private Transform spawnPoint1;
     [SerializeField] private Transform spawnPoint2;
@@ -24,9 +26,12 @@ public class SpawnCard : MonoBehaviour
     {
         //Example of the GameObject being found
         hand = GameObject.Find("Hand");
+        healthSystem = GameObject.Find("PlayerHealthBar").GetComponent<HealthSystem>();
     }
     public void buttonPress()
     {
+        healthSystem.clearData();
+
         for (int i = 0; i < handList.Count; i++)
         {
             Destroy(handList[i]);

@@ -22,15 +22,13 @@ public class HealthSystem : MonoBehaviour
     }
     public void Update()
     {
-        RegenerateHealth(regenerationRate);
-
         HealthText.text = String.Format("<color=green>{0}</color> + <color=blue>{1}</color> + <color=white>{2}</color>", currentHealth, currentBlock, currentDodge);
     }
 
-    public void RegenerateHealth(int regenerationAmount)
+    public void clearData()
     {
-        if (currentHealth < maxHealth) currentHealth += regenerationAmount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        currentBlock = 0;
+        currentDodge = 0;
     }
     public void RemoveHealth(int damage)
     {
