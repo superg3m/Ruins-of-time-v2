@@ -12,6 +12,10 @@ public class HealthSystem : MonoBehaviour
     public int currentHealth;
     public int currentBlock;
     public int currentDodge;
+    public int currentDamage;
+
+    int cacheOne;
+    int cacheTwo;
 
     public int regenerationRate;
 
@@ -25,28 +29,44 @@ public class HealthSystem : MonoBehaviour
         HealthText.text = String.Format("<color=green>{0}</color> + <color=blue>{1}</color> + <color=white>{2}</color>", currentHealth, currentBlock, currentDodge);
     }
 
+    public void calculateValues()
+    {
+        cacheOne = currentDodge;
+        cacheTwo = currentDamage;
+
+        currentDamage = (cacheTwo - cacheOne) > 0 ? (cacheTwo - cacheOne) : 0;
+
+        currentDodge = (cacheOne - cacheTwo) > 0 ? (cacheOne - cacheTwo) : 0;
+
+        cacheOne = currentBlock;
+        cacheTwo = currentDamage;
+
+        currentDamage = (cacheTwo - cacheOne) > 0 ? (cacheTwo - cacheOne) : 0;
+        currentBlock = (cacheOne - cacheTwo) > 0 ? (cacheOne - cacheTwo) : 0;
+        
+        currentHealth -= currentDamage;
+        currentDamage = 0;
+    }
+
     public void clearData()
     {
         currentBlock = 0;
         currentDodge = 0;
     }
-    public void RemoveHealth(int damage)
+    public void addDamage(int damage)
     {
-        if((currentHealth - damage) >= 0)
-        {
-            currentHealth -= damage;
-        }
+        currentDamage += damage;
     }
-    public void AddHealth(int amount)
+    public void addHealth(int amount)
     {
         if ((currentHealth + amount) <= maxHealth) currentHealth += amount;
         else if ((currentHealth + amount) > maxHealth)  currentHealth = maxHealth;
     }
-    public void AddBlock(int amount)
+    public void addBlock(int amount)
     {
         currentBlock += amount;
     }
-    public void AddDodge(int amount)
+    public void addDodge(int amount)
     {
         currentDodge += amount;
     }

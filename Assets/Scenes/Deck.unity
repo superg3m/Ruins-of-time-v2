@@ -313,6 +313,7 @@ MonoBehaviour:
   currentHealth: 0
   currentBlock: 0
   currentDodge: 0
+  currentDamage: 0
   regenerationRate: 0
 --- !u!1 &73698160
 GameObject:
@@ -820,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckgen: {fileID: 448032590}
-  backCoverPrefab: {fileID: 7312130255011366989, guid: 1cc78cc4da5e3c7468ada381ed804f17, type: 3}
+  backCoverPrefab: {fileID: 5650802417311996641, guid: ffc9319e70b758e4da88c605cf1b13d7, type: 3}
   deckPos: {fileID: 448032588}
   buttonPos: {fileID: 0}
   spawnPoint: {fileID: 196088183}
@@ -1288,7 +1289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
-  damageSystem: {fileID: 1629267215}
   statusTracker: []
   totalDamageSelected: 0
   totalBlockSelected: 0
@@ -1602,6 +1602,7 @@ MonoBehaviour:
   currentHealth: 0
   currentBlock: 0
   currentDodge: 0
+  currentDamage: 0
   regenerationRate: 0
 --- !u!1 &1120252123
 GameObject:
@@ -1814,6 +1815,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 65625123}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: calculateValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1020049095}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: calculateValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 776992562}
         m_TargetAssemblyTypeName: PlayerCombatSystem, Assembly-CSharp
         m_MethodName: ClearData
@@ -1905,16 +1930,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169ca98e04c44ee4b8bf6dc5d2b73a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
   damageSystem: {fileID: 1629267215}
-  statusList: []
   card: {fileID: 261071760}
   hand: {fileID: 0}
   cardChosen: {fileID: 0}
   totalDamageSelected: 0
   totalBlockSelected: 0
   totalDodgeSelected: 0
+  statusList: []
   statusTracker: []
 --- !u!4 &1223230305
 Transform:
@@ -2299,7 +2323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckgen: {fileID: 1860222962}
-  backCoverPrefab: {fileID: 7312130255011366989, guid: 1cc78cc4da5e3c7468ada381ed804f17, type: 3}
+  backCoverPrefab: {fileID: 120727129791162279, guid: 1cc78cc4da5e3c7468ada381ed804f17, type: 3}
   deckPos: {fileID: 1860222960}
   buttonPos: {fileID: 642548473}
   spawnPoint: {fileID: 1156352420}

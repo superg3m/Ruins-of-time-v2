@@ -6,10 +6,9 @@ using UnityEngine.UIElements;
 
 public class AICombatSystem : MonoBehaviour
 {
-    public HealthSystem enemyHealth;
     public HealthSystem playerHealth;
     public DamageSystem damageSystem;
-    public List<string> statusList;
+    
     public EnemySpawnCard card;
     public GameObject hand;
     public GameObject cardChosen;
@@ -18,7 +17,7 @@ public class AICombatSystem : MonoBehaviour
     public int totalBlockSelected;
     public int totalDodgeSelected;
 
-    private List<string> possibleStatusList = new List<string>() { "Burn", "Heal", "Poison", "Bleeding", "Vulnerable", "Retain Block" };
+    public List<string> statusList;
     public List<string> statusTracker = new List<string>();
     public Dictionary<string, int> statusDictionary = new Dictionary<string, int>()
     {
@@ -77,8 +76,7 @@ public class AICombatSystem : MonoBehaviour
                         cardChosen = card.handList[randomChoice];
                         totalDamageSelected = cardChosen.GetComponent<CurrentCard>().attackValue;
                         string status = cardChosen.GetComponent<CurrentCard>().status;
-                        Debug.Log(totalDamageSelected);
-                        playerHealth.RemoveHealth(totalDamageSelected);
+                        playerHealth.addDamage(totalDamageSelected);
                         statusTracker.Add(status);
                         damageSystem.SetPlayerStatus(status);
                         searching = false;
@@ -146,7 +144,6 @@ public class AICombatSystem : MonoBehaviour
     }
     public void SetData()
     {
-        Debug.Log(totalDamageSelected);
         damageSystem.SetMonsterDamage(totalDamageSelected);
         damageSystem.SetMonsterDodge(totalDodgeSelected);
         damageSystem.SetMonsterBlock(totalBlockSelected);

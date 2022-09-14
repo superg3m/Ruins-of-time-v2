@@ -57,9 +57,9 @@ public class DamageSystem : MonoBehaviour
             {
                 finalPlayerDamage = 0;
             }
-            playerHealth.AddBlock(playerBlock);
-            playerHealth.AddDodge(playerDodge);
-            enemyHealth.RemoveHealth(finalPlayerDamage);
+            playerHealth.addBlock(playerBlock);
+            playerHealth.addDodge(playerDodge);
+            enemyHealth.addDamage(finalPlayerDamage);
             enemyHealth.Update();
             
         }
@@ -70,9 +70,9 @@ public class DamageSystem : MonoBehaviour
             {
                 finalMonsterDamage = 0;
             }
-            enemyHealth.AddBlock(monsterBlock);
-            enemyHealth.AddDodge(monsterDodge);
-            playerHealth.RemoveHealth(finalMonsterDamage);
+            enemyHealth.addBlock(monsterBlock);
+            enemyHealth.addDodge(monsterDodge);
+            playerHealth.addDamage(finalMonsterDamage);
             playerHealth.Update();
         }
         playerDamage = 0;

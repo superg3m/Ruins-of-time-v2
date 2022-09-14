@@ -27,7 +27,6 @@ public class DeckSize : MonoBehaviour
 
     private void Awake()
     {
-        backCoverPrefab = (GameObject)Resources.Load("Prefabs/Card/CardBack", typeof(GameObject));
         cardCount = 0;
         if (tag == "Player")
         {
