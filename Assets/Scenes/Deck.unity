@@ -1289,6 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
+  damageSystem: {fileID: 0}
   statusTracker: []
   totalDamageSelected: 0
   totalBlockSelected: 0
@@ -1931,13 +1932,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1020049095}
+  enemyHealth: {fileID: 65625123}
   damageSystem: {fileID: 1629267215}
-  card: {fileID: 261071760}
-  hand: {fileID: 0}
-  cardChosen: {fileID: 0}
+  enemyCard: {fileID: 261071760}
+  cardsChosen: []
   totalDamageSelected: 0
   totalBlockSelected: 0
   totalDodgeSelected: 0
+  randomAttackChance: 0
+  randomDefenseChance: 0
+  randomStatusChance: 0
   statusList: []
   statusTracker: []
 --- !u!4 &1223230305

@@ -14,6 +14,15 @@ using Newtonsoft.Json.Linq;
 /// </summary>
 public class CurrentCard : MonoBehaviour
 {
+    public Sprite cardImage;
+    public Image image;
+    public TMP_Text manaCostText;
+    public TMP_Text nameText;
+    public TMP_Text classificationText;
+    public TMP_Text descriptionText;
+    public Image bannerColor;
+
+    [SerializeField] private Image cardBorder;
 
     public List<CardBaseObject> currentCard = new List<CardBaseObject>();
 
@@ -30,14 +39,9 @@ public class CurrentCard : MonoBehaviour
     public int statusQuanity;
     public string cardDescription;
 
-    public Sprite cardImage;
+    public bool isSelected;
 
-    public Image image;
-    public TMP_Text manaCostText;
-    public TMP_Text nameText;
-    public TMP_Text classificationText;
-    public TMP_Text descriptionText;
-    public Image bannerColor;
+
 
     void Start()
     {
@@ -51,6 +55,11 @@ public class CurrentCard : MonoBehaviour
             currentID = Random.Range(0, DeckGenerator.enemyCardList.Length - 1);
             currentCard.Add(DeckGenerator.enemyCardList[0]);
         }
+    }
+
+    public void setSelectionBool(bool boolean)
+    {
+        isSelected = boolean;
     }
 
     void Update()
@@ -133,7 +142,16 @@ public class CurrentCard : MonoBehaviour
             nameText.text = "" + cardName;
             classificationText.text = "" + classification;
             descriptionText.text = "" + cardDescription;
+            if (isSelected)
+            {
+                //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 15, this.transform.position.z);
+                cardBorder.color = Color.red;
+            }
+            else
+            {
+                //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 15, this.transform.position.z);
+                cardBorder.color = Color.black;
+            }
         }
-        
     }
 }

@@ -1852,14 +1852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36c43fae5796b341be82680d6d72056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCard: []
-  currentID: 0
-  id: 0
-  manaCost: 0
-  classification: 
-  cardName: 
-  value: 0
-  cardDescription: 
   cardImage: {fileID: 0}
   image: {fileID: 2968943000116163283}
   manaCostText: {fileID: 4632676768594763005}
@@ -1867,6 +1859,20 @@ MonoBehaviour:
   classificationText: {fileID: 5148319260536446849}
   descriptionText: {fileID: 1383857532561585377}
   bannerColor: {fileID: 8800990507688001053}
+  cardBorder: {fileID: 1036224285906281013}
+  currentCard: []
+  currentID: 0
+  id: 0
+  manaCost: 0
+  classification: 
+  cardName: 
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
+  cardDescription: 
+  isSelected: 0
 --- !u!114 &964034465639075883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,7 +1891,6 @@ MonoBehaviour:
   cardToSort: {fileID: 5700276190055355664}
   confirmButton: {fileID: 0}
   currentStatus: 
-  description: 
   type: 
 --- !u!114 &1553890921607297710
 MonoBehaviour:

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class EnemySpawnCard : MonoBehaviour
 {
     public DeckSize deck;
+
+    [SerializeField] private Button confirmButton;
 
     public GameObject card;
     private GameObject hand;
@@ -22,6 +24,8 @@ public class EnemySpawnCard : MonoBehaviour
     }
     public void buttonPress()
     {
+        AICombatSystem.isWaiting = false;
+        confirmButton.interactable = true;
         for (int i = 0; i < handList.Count; i++)
         {
             Destroy(handList[i]);

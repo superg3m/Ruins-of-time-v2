@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using System.Xml;
+using UnityEngine.UI;
 
 public class PlayerCombatSystem : MonoBehaviour
 {
     public HealthSystem enemyHealth;
     public HealthSystem playerHealth;
-    //public DamageSystem damageSystem;
-
+    public DamageSystem damageSystem;
 
     //  Status list needs to be a dictionary to track quanity
 
@@ -87,9 +87,9 @@ public class PlayerCombatSystem : MonoBehaviour
 
     public void SetData()
     {
-        enemyHealth.addDamage(totalDamageSelected);
-        playerHealth.addBlock(totalBlockSelected);
-        playerHealth.addDodge(totalDodgeSelected);
+        damageSystem.SetPlayerDamage(totalDamageSelected);
+        damageSystem.SetPlayerBlock(totalBlockSelected);
+        damageSystem.SetPlayerDodge(totalDodgeSelected);
     }
     public void ClearData()
     {

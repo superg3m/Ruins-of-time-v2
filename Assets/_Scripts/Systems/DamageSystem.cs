@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamageSystem : MonoBehaviour
 {
     public HealthSystem enemyHealth;
     public HealthSystem playerHealth;
+
+    [SerializeField] private Button confirmButton;
 
     public int playerDamage;
     public int playerBlock;
@@ -28,10 +31,6 @@ public class DamageSystem : MonoBehaviour
     {
         playerDodge += incDodge;
     }
-    public void SetPlayerStatus(string status)
-    {
-
-    }
     public void SetMonsterDamage(int incDamage)
     {
         monsterDamage += incDamage;
@@ -50,29 +49,19 @@ public class DamageSystem : MonoBehaviour
     }
     public void CalculateResults(bool playerCheck)
     {
+        confirmButton.interactable = false;
         if (playerCheck)
         {
-            int finalPlayerDamage = playerDamage - (monsterBlock + monsterDodge);
-            if (finalPlayerDamage < 0)
-            {
-                finalPlayerDamage = 0;
-            }
             playerHealth.addBlock(playerBlock);
             playerHealth.addDodge(playerDodge);
-            enemyHealth.addDamage(finalPlayerDamage);
+            enemyHealth.addDamage(playerDamage);
             enemyHealth.Update();
-            
         }
         else
         {
-            int finalMonsterDamage = monsterDamage - (playerBlock + playerDodge);
-            if (finalMonsterDamage < 0)
-            {
-                finalMonsterDamage = 0;
-            }
             enemyHealth.addBlock(monsterBlock);
             enemyHealth.addDodge(monsterDodge);
-            playerHealth.addDamage(finalMonsterDamage);
+            playerHealth.addDamage(monsterDamage);
             playerHealth.Update();
         }
         playerDamage = 0;

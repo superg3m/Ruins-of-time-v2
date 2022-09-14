@@ -23,14 +23,14 @@ public class DeckSize : MonoBehaviour
 
     public List<CardBaseObject> cards = new List<CardBaseObject>();
 
-    private CardBaseObject[] cardList;
+    public CardBaseObject[] cardList;
 
     private void Awake()
     {
         cardCount = 0;
         if (tag == "Player")
         {
-            cardList = deckgen.GenerateDeck("Player");
+            cardList = deckgen.generateDeck("Player");
             buttonPos = GameObject.Find("DeckButton").transform;
             spawnPoint = GameObject.Find("SpawnPoint").transform;
             deckPos = GameObject.Find("Deck");
@@ -38,21 +38,23 @@ public class DeckSize : MonoBehaviour
         }
         else if (tag == "Enemy")
         {
-            cardList = deckgen.GenerateDeck("Enemy");
+            cardList = deckgen.generateDeck("Enemy");
             spawnPoint = GameObject.Find("EnemySpawnPoint").transform;
             buttonPos = GameObject.Find("DeckButton").transform;
             deckPos = GameObject.Find("EnemyDeck");
             originalSpawnPoint = GameObject.Find("EnemyOriginalSpawnPoint").transform;
         }
-    }
-    private void Start()
-    {
+
         for (int i = 0; i < cardList.Length; i++)
         {
             cards.Add(cardList[i]);
         }
         deckSize = cardList.Length;
         originalSpawnPoint.transform.position = spawnPoint.transform.position;
+    }
+    private void Start()
+    {
+        
     }
 
     // Update is called once per frame
