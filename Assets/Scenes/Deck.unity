@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 448032591}
+  confirmButton: {fileID: 1194122547}
   card: {fileID: 6577786865771584239, guid: b27bf72a92a5cca4496e7642d65d716b, type: 3}
   handList: []
   spawnPoint6: {fileID: 1639882956}
@@ -830,6 +831,7 @@ MonoBehaviour:
   cardCount: 0
   displayDeckSize: []
   cards: []
+  cardList: []
 --- !u!1 &464155769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1178,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1223230304}
+        m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
+        m_MethodName: clearChoosenCards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &642548475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
-  damageSystem: {fileID: 0}
+  damageSystem: {fileID: 1629267215}
   statusTracker: []
   totalDamageSelected: 0
   totalBlockSelected: 0
@@ -1770,18 +1784,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1223230304}
         m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
-        m_MethodName: ChooseCard
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 15
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223230304}
-        m_TargetAssemblyTypeName: AICombatSystem, Assembly-CSharp
         m_MethodName: SetData
         m_Mode: 1
         m_Arguments:
@@ -2177,6 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 65625123}
   playerHealth: {fileID: 1020049095}
+  confirmButton: {fileID: 1194122547}
   playerDamage: 0
   playerBlock: 0
   playerDodge: 0
@@ -2336,6 +2339,7 @@ MonoBehaviour:
   cardCount: 0
   displayDeckSize: []
   cards: []
+  cardList: []
 --- !u!1 &1894873710
 GameObject:
   m_ObjectHideFlags: 0
