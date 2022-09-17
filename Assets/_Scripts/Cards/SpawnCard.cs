@@ -30,7 +30,6 @@ public class SpawnCard : MonoBehaviour
     }
     public void buttonPress()
     {
-        //healthSystem.clearData();
 
         for (int i = 0; i < handList.Count; i++)
         {

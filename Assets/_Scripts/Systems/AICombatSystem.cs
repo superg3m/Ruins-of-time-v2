@@ -9,6 +9,7 @@ public class AICombatSystem : MonoBehaviour
     public HealthSystem playerHealth;
     public HealthSystem enemyHealth;
     public DamageSystem damageSystem;
+    public StatusSystem playerStatus;
 
     public EnemySpawnCard enemyCard;
 
@@ -22,24 +23,11 @@ public class AICombatSystem : MonoBehaviour
     public int randomDefenseChance;
     public int randomStatusChance;
 
-    public List<string> statusList;
-    public List<string> statusTracker = new List<string>();
-
     public static bool isWaiting = false;
 
     int numberOfOffensive = 0;
     int numberOfDefensive = 0;
     int numberOfStatus = 0;
-
-    public Dictionary<string, int> statusDictionary = new Dictionary<string, int>()
-    {
-        {"Burn", 0},
-        {"Heal", 0},
-        {"Poison", 0},
-        {"Bleeding", 0},
-        {"Vulnerable", 0},
-        {"Retain Block", 0}
-    };
 
     void determineCardTypes()
     {
@@ -119,7 +107,6 @@ public class AICombatSystem : MonoBehaviour
             string currentStatus = cardsChosen[i].status;
             int statusQuantity = cardsChosen[i].statusQuanity;
 
-            Debug.Log(cardsChosen[i].attackValue);
             totalDamageSelected += cardsChosen[i].attackValue;
             totalBlockSelected += cardsChosen[i].defenseValue;
             totalDodgeSelected += cardsChosen[i].dodgeValue;
@@ -127,7 +114,7 @@ public class AICombatSystem : MonoBehaviour
             // Going to need to exclude heal
             if (currentStatus != "" && currentStatus != "Heal")
             {
-                //playerHealth.addStatuses(currentStatus, statusQuantity);
+                playerStatus.addStatuses(currentStatus, statusQuantity);
             }
             else if (currentStatus != "" && currentStatus == "Heal")
             {
@@ -138,10 +125,6 @@ public class AICombatSystem : MonoBehaviour
         playerHealth.addDamage(totalDamageSelected);
         enemyHealth.addBlock(totalBlockSelected);
         enemyHealth.addDodge(totalDodgeSelected);
-        for (int i = 0; i < statusList.Count; i++)
-        {
-            //damageSystem.SetPlayerStatus(statusList[i]);
-        }
     }
     
     public void ClearData()

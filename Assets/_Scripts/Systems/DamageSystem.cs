@@ -14,39 +14,38 @@ public class DamageSystem : MonoBehaviour
     public int playerDamage;
     public int playerBlock;
     public int playerDodge;
+    public int playerStatusQuantity;
 
     public int monsterDamage;
     public int monsterBlock;
     public int monsterDodge;
 
-    public void SetPlayerDamage(int incDamage)
+    public void addPlayerDamage(int incDamage)
     {
         playerDamage += incDamage;
     }
-    public void SetPlayerBlock(int incBlock)
+    public void addPlayerBlock(int incBlock)
     {
         playerBlock += incBlock;
     }
-    public void SetPlayerDodge(int incDodge)
+    public void addPlayerDodge(int incDodge)
     {
         playerDodge += incDodge;
     }
-    public void SetMonsterDamage(int incDamage)
+
+    public void addMonsterDamage(int incDamage)
     {
         monsterDamage += incDamage;
     }
-    public void SetMonsterBlock(int incBlock)
+    public void addMonsterBlock(int incBlock)
     {
         monsterBlock += incBlock;
     }
-    public void SetMonsterDodge(int incDodge)
+    public void addMonsterDodge(int incDodge)
     {
         monsterDodge += incDodge;
     }
-    public void SetMonsterStatus(string status)
-    {
 
-    }
     public void CalculateResults(bool playerCheck)
     {
         confirmButton.interactable = false;

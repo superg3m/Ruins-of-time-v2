@@ -8,6 +8,7 @@ public class ScanCardData : MonoBehaviour
 {
     public UseMenu useMenu;
     public PlayerCombatSystem combatSystem;
+    public StatusSystem enemyStatus;
     public HealthSystem enemyHealth;
     public CurrentCard cardToSort;
     public Button confirmButton;
@@ -25,6 +26,7 @@ public class ScanCardData : MonoBehaviour
         currentStatus = "";
         confirmButton = GameObject.Find("ConfirmButton").GetComponent<Button>();
         enemyHealth = GameObject.Find("EnemyHealthBar").GetComponent<HealthSystem>();
+        enemyStatus = GameObject.Find("EnemyHealthBar").GetComponent<StatusSystem>();
         combatSystem = GameObject.Find("CombatSystem").GetComponent<PlayerCombatSystem>();
     }
     private void Start()
@@ -56,14 +58,15 @@ public class ScanCardData : MonoBehaviour
 
             if (currentStatus != "")
             {
-                combatSystem.addStatuses(currentStatus, statusQuantity);
+                combatSystem.addStatusQuantity(statusQuantity);
+                enemyStatus.addStatuses(currentStatus, statusQuantity);
             }
             useMenu.setUsingBool(false);
         }
 
         if(useMenu.isCanceling)
         {
-            if(currentStatus != "") combatSystem.RemoveStatus(currentStatus, statusQuantity);
+            if(currentStatus != "") enemyStatus.removeStatus(currentStatus, statusQuantity);
 
             if (combatSystem.totalDamageSelected > 0) combatSystem.addDamage(-attackValue);
 

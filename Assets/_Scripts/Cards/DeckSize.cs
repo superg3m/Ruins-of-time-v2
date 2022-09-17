@@ -64,6 +64,10 @@ public class DeckSize : MonoBehaviour
         {
             deckSize = cardList.Length;
         }
+        if (deckSize <= 0 && tag == "Player")
+        {
+            deckSize = cardList.Length;
+        }
         if (deckSize != cardCount)
         {
             for (int i = 0; i < displayDeckSize.Count; i++)
