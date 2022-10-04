@@ -112,11 +112,11 @@ public class AICombatSystem : MonoBehaviour
             totalDodgeSelected += cardsChosen[i].dodgeValue;
 
             // Going to need to exclude heal
-            if (currentStatus != "" && currentStatus != "Heal")
+            if (currentStatus != "" && currentStatus != "Heal" && currentStatus != null)
             {
                 playerStatus.addStatuses(currentStatus, statusQuantity);
             }
-            else if (currentStatus != "" && currentStatus == "Heal")
+            else if (currentStatus != "" && currentStatus == "Heal" && currentStatus != null)
             {
                 //playerHealth.addStatuses(currentStatus, statusQuantity);
             }

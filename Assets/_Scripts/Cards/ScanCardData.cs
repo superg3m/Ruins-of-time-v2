@@ -56,7 +56,7 @@ public class ScanCardData : MonoBehaviour
 
             combatSystem.DodgeDamage(dodgeValue);
 
-            if (currentStatus != "")
+            if (currentStatus != "" && currentStatus != null)
             {
                 combatSystem.addStatusQuantity(statusQuantity);
                 enemyStatus.addStatuses(currentStatus, statusQuantity);

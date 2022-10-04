@@ -26,7 +26,16 @@ public class HealthSystem : MonoBehaviour
     }
     public void Update()
     {
-        HealthText.text = String.Format("<color=green>{0}</color> + <color=blue>{1}</color> + <color=white>{2}</color>", currentHealth, currentBlock, currentDodge);
+        string str = String.Format("<color=green>{0}</color>", currentHealth);
+        if (currentBlock != 0)
+        {
+            str += String.Format(" + <color=blue>{0}</color>", currentBlock);
+        }
+        if (currentDodge != 0)
+        {
+            str += String.Format(" + <color=white>{0}</color>", currentDodge);
+        }
+        HealthText.text = str;
     }
 
     public void calculateValues()
