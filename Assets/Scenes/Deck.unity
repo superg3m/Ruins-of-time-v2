@@ -315,6 +315,7 @@ MonoBehaviour:
   currentBlock: 0
   currentDodge: 0
   currentDamage: 0
+  vulnerable: 0
   regenerationRate: 0
 --- !u!114 &65625124
 MonoBehaviour:
@@ -913,6 +914,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 65625124}
+        m_TargetAssemblyTypeName: StatusSystem, Assembly-CSharp
+        m_MethodName: doEffectDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1020049096}
+        m_TargetAssemblyTypeName: StatusSystem, Assembly-CSharp
+        m_MethodName: doEffectDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 261071760}
         m_TargetAssemblyTypeName: EnemySpawnCard, Assembly-CSharp
         m_MethodName: buttonPress
@@ -1391,6 +1416,7 @@ MonoBehaviour:
   currentBlock: 0
   currentDodge: 0
   currentDamage: 0
+  vulnerable: 0
   regenerationRate: 0
 --- !u!114 &1020049096
 MonoBehaviour:

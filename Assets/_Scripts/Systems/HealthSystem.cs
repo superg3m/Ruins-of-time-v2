@@ -14,6 +14,8 @@ public class HealthSystem : MonoBehaviour
     public int currentDodge;
     public int currentDamage;
 
+    public bool vulnerable;
+
     int cacheOne;
     int cacheTwo;
 
@@ -23,6 +25,14 @@ public class HealthSystem : MonoBehaviour
     public void Awake()
     {
         currentHealth = maxHealth;
+    }
+    private void OnEnable()
+    {
+        EventTesting.onHit += addHealth;
+    }
+    public void OnDisable()
+    {
+        
     }
     public void Update()
     {
@@ -40,6 +50,16 @@ public class HealthSystem : MonoBehaviour
 
     public void calculateValues()
     {
+        if (vulnerable) 
+        {
+            currentDamage *= 2;
+            Debug.Log(this.gameObject.name + "doubled currentdamage: " + currentDamage);
+        }
+        else
+        {
+            Debug.Log(this.gameObject.name + " currentdamage: " + currentDamage);
+        }
+        
         cacheOne = currentDodge;
         cacheTwo = currentDamage;
 
@@ -55,6 +75,7 @@ public class HealthSystem : MonoBehaviour
         
         currentHealth -= currentDamage;
         currentDamage = 0;
+        vulnerable = false;
     }
 
     public void clearData()

@@ -10,14 +10,17 @@ public class StatusSystem : MonoBehaviour
     public List<string> keys;
     public List<int> values;
 
+    private HealthSystem healthSystem;
     public List<string> statusTracker = new List<string>();
 
     public Dictionary<string, int> statusDictionary;
+    public Dictionary<string, int> statusDictionaryCache;
     bool firstTime = true;
     bool updating;
 
     public void Awake()
     {
+        healthSystem = this.GetComponent<HealthSystem>();
         statusDictionary = new Dictionary<string, int>()
         {
             {"Burn", 0},
@@ -82,7 +85,7 @@ public class StatusSystem : MonoBehaviour
 
     public void lowerStatusQuantity()
     {
-        if(!firstTime)
+        if (!firstTime)
         {
             for (int i = 0; i < statusDictionary.Count; i++)
             {
@@ -95,14 +98,54 @@ public class StatusSystem : MonoBehaviour
                     }
                     else
                     {
-                        statusTracker.Add(String.Format("{0} {1}x", keys[i], statusDictionary[keys[i]]-1));
+                        statusTracker.Add(String.Format("{0} {1}x", keys[i], statusDictionary[keys[i]] - 1));
                     }
                     statusDictionary[keys[i]] -= 1;
                 }
-                
+
             }
         }
         firstTime = false;
         updating = true;
+    }
+
+    public void doEffectDamage()
+    {
+        foreach(string status in keys)
+        {
+            switch (status)
+            {
+
+                case "Heal":
+                    if (statusDictionary[status] > 0)
+                    {
+                        Debug.Log(status + ": " + statusDictionary[status]);
+                    }
+                    break;
+                
+                case "Vulnerable":
+                    if (statusDictionary[status] > 0)
+                    {
+                        Debug.Log(status + ": " + statusDictionary[status]);
+                        healthSystem.vulnerable = true;
+                    }
+                    break;
+
+                case "Retain Block":
+                    if (statusDictionary[status] > 0)
+                    {
+                        Debug.Log(status + ": " + statusDictionary[status]);
+                    }
+                    break;
+
+                default:
+                    if (statusDictionary[status] > 0)
+                    {
+                        Debug.Log(status + ": " + statusDictionary[status]);
+                        healthSystem.addHealth(-statusDictionary[status]);
+                    }
+                    break;
+            }
+        }        
     }
 }
