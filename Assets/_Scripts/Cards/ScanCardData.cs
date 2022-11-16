@@ -38,6 +38,7 @@ public class ScanCardData : MonoBehaviour
     {
         if (gameObject.tag == "Selected") Destroy(this.gameObject);
     }
+    
 
     // Update is called once per frame
     void Update()

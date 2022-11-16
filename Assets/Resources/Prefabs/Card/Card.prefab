@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 1553890921607297710}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Unselected
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1887,6 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useMenu: {fileID: 1553890921607297710}
   combatSystem: {fileID: 0}
+  enemyStatus: {fileID: 0}
   enemyHealth: {fileID: 0}
   cardToSort: {fileID: 5700276190055355664}
   confirmButton: {fileID: 0}

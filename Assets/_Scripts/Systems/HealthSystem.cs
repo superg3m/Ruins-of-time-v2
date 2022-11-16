@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Drawing;
 using System;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -46,20 +47,17 @@ public class HealthSystem : MonoBehaviour
             str += String.Format(" + <color=white>{0}</color>", currentDodge);
         }
         HealthText.text = str;
+        if(currentHealth <= 0) {SceneManager.LoadScene("GameOverLose");}
     }
 
     public void calculateValues()
     {
         if (vulnerable) 
         {
+            Debug.Log(this.gameObject.name + " current damage: " + currentDamage);
             currentDamage *= 2;
-            Debug.Log(this.gameObject.name + "doubled currentdamage: " + currentDamage);
-        }
-        else
-        {
-            Debug.Log(this.gameObject.name + " currentdamage: " + currentDamage);
-        }
-        
+            Debug.Log(this.gameObject.name + " doubled current damage: " + currentDamage);
+        }   
         cacheOne = currentDodge;
         cacheTwo = currentDamage;
 

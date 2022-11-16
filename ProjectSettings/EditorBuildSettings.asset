@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Deck.unity
     guid: d2fce3f6f2d80d24e8dae95aa17332c6
+  - enabled: 1
+    path: Assets/Scenes/GameOverLose.unity
+    guid: e55a34f5a8b1ecd4e98ea523a211e334
   m_configObjects: {}

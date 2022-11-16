@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Jobs;
+using UnityEngine.SceneManagement;
 
 public class DeckSize : MonoBehaviour
 {
@@ -66,7 +66,7 @@ public class DeckSize : MonoBehaviour
         }
         if (deckSize <= 0 && tag == "Player")
         {
-            deckSize = cardList.Length;
+            SceneManager.LoadScene("GameOverLose");
         }
         if (deckSize != cardCount)
         {
