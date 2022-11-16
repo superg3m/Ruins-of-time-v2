@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 public class LoadBattleScene : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider other)
     {
-        
         SceneManager.LoadScene("Deck");
     }
 
