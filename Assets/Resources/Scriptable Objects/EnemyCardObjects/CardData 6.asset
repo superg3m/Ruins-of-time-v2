@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 7
   classification: Offensive
   cardName: Pounce
-  value: 8
+  attackValue: 9
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 9 <color=red>damage</color>
   cardImage: {fileID: 21300000, guid: 6b22156af64babe4f9bff6441c5b942f, type: 3}

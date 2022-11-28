@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 /// <summary>
 /// ============================================ Unfinished Class =====================================================
@@ -12,22 +15,45 @@ public class UseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject useScreen;
     [SerializeField] private GameObject flipButton;
+    public Button button;
     public bool isUsingCard;
+    public bool isCanceling;
 
+    private void Awake()
+    {
+        
+    }
+    private void Update()
+    {
+    
+    }
     // These methods are used by the GameObejcts under the "UseSceen" GameObject
-
 
     // This method is used by the GameObject "UseButton" and is attached to the button componet
     public void usingButton()
     {
-       isUsingCard = true;
+        button.interactable = false;
+        gameObject.tag = "Selected";
+        isUsingCard = true;
+    }
+
+    public void setUsingBool(bool boolean)
+    {
+       isUsingCard = boolean;
+    }
+
+    public void setCancelingBool(bool boolean)
+    {
+        isCanceling = boolean;
     }
 
     // This method is used by the GameObject "CancelButton" and is attached to the button componet
     public void cancelButton()
     {
-       isUsingCard = false;
-       useScreen.transform.SetAsFirstSibling();
-       flipButton.transform.SetAsLastSibling();
+        button.interactable = true;
+        gameObject.tag = "Unselected";
+        isCanceling = true;
+        useScreen.transform.SetAsFirstSibling();
+        flipButton.transform.SetAsLastSibling();
     }
 }

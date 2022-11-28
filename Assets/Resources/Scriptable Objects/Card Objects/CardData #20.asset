@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 6
   classification: Alteration
   cardName: Mythril Weapons
-  value: 0
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Grants an additional attack card.
   cardImage: {fileID: 21300000, guid: 7092324b93851a14c858530cca4a6b26, type: 3}

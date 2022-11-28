@@ -6,6 +6,11 @@ TagManager:
   tags:
   - MenuMusic
   - Enemy
+  - Unselected
+  - Selected
+  - Card
+  - BattleMusic
+  - BattleMusicLoop
   layers:
   - Default
   - TransparentFX

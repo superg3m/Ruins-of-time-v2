@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class EnemySpawnCard : MonoBehaviour
 {
     public DeckSize deck;
+
+    [SerializeField] private Button confirmButton;
 
     public GameObject card;
     private GameObject hand;
@@ -22,16 +24,16 @@ public class EnemySpawnCard : MonoBehaviour
     }
     public void buttonPress()
     {
+        AICombatSystem.isWaiting = false;
+        confirmButton.interactable = true;
         for (int i = 0; i < handList.Count; i++)
         {
             Destroy(handList[i]);
         }
-        
         handList.Clear();
-        handList.Insert(0, Instantiate(card, spawnPoint6.position, spawnPoint6.rotation, hand.transform));
-        handList.Insert(1, Instantiate(card, spawnPoint7.position, spawnPoint7.rotation, hand.transform));
-        handList.Insert(2, Instantiate(card, spawnPoint8.position, spawnPoint8.rotation, hand.transform));
+        handList.Add(Instantiate(card, spawnPoint6.position, spawnPoint6.rotation, hand.transform));
+        handList.Add(Instantiate(card, spawnPoint7.position, spawnPoint7.rotation, hand.transform));
+        handList.Add(Instantiate(card, spawnPoint8.position, spawnPoint8.rotation, hand.transform));
         deck.deckSize -= 3;
-        
     }
 }

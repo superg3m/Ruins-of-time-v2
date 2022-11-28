@@ -16,7 +16,11 @@ MonoBehaviour:
   manaCost: 6
   classification: Alteration
   cardName: Weapons of Adamantine
-  value: 0
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Double <color=red>damage</color>. Defenders Blocks are negated
     however their Dodge is doubled.
   cardImage: {fileID: 21300000, guid: 2c04f4986ebc72e48a8b0c3eb2e42db2, type: 3}

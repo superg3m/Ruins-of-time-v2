@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8636225380327898574}
   - component: {fileID: 2777948002595147664}
   - component: {fileID: 6666675540353206790}
-  - component: {fileID: 6615764359748301380}
   - component: {fileID: 6026104399889075120}
+  - component: {fileID: 6615764359748301380}
   m_Layer: 0
   m_Name: CancelButton
   m_TagString: Untagged
@@ -79,6 +79,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6026104399889075120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568981406487184135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf52be30d9dc9694694f1af9211c3c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useScreen: {fileID: 1055272074785446759}
+  flipButton: {fileID: 2567138303622998678}
+  button: {fileID: 6633781675426327134}
+  isUsingCard: 0
+  isCanceling: 0
 --- !u!114 &6615764359748301380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6026104399889075120}
+      - m_Target: {fileID: 1553890921607297710}
         m_TargetAssemblyTypeName: UseMenu, Assembly-CSharp
         m_MethodName: cancelButton
         m_Mode: 1
@@ -135,21 +152,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6026104399889075120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568981406487184135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf52be30d9dc9694694f1af9211c3c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useScreen: {fileID: 1055272074785446759}
-  flipButton: {fileID: 2567138303622998678}
-  isUsingCard: 0
 --- !u!1 &608591663904799230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,7 +1543,6 @@ GameObject:
   - component: {fileID: 8310106381301730840}
   - component: {fileID: 7664374511455264974}
   - component: {fileID: 6633781675426327134}
-  - component: {fileID: 4757879044902778978}
   m_Layer: 0
   m_Name: UseButton
   m_TagString: Untagged
@@ -1652,7 +1653,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4757879044902778978}
+      - m_Target: {fileID: 1553890921607297710}
         m_TargetAssemblyTypeName: UseMenu, Assembly-CSharp
         m_MethodName: usingButton
         m_Mode: 1
@@ -1664,21 +1665,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4757879044902778978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6312359428947882083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf52be30d9dc9694694f1af9211c3c2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useScreen: {fileID: 1055272074785446759}
-  flipButton: {fileID: 2567138303622998678}
-  isUsingCard: 0
 --- !u!1 &6428211382156872905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,9 +1810,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1515180382666268547}
   - component: {fileID: 5700276190055355664}
+  - component: {fileID: 964034465639075883}
+  - component: {fileID: 1553890921607297710}
   m_Layer: 0
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1864,14 +1852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36c43fae5796b341be82680d6d72056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCard: []
-  currentID: 0
-  id: 0
-  manaCost: 0
-  classification: 
-  cardName: 
-  value: 0
-  cardDescription: 
   cardImage: {fileID: 0}
   image: {fileID: 2968943000116163283}
   manaCostText: {fileID: 4632676768594763005}
@@ -1879,6 +1859,57 @@ MonoBehaviour:
   classificationText: {fileID: 5148319260536446849}
   descriptionText: {fileID: 1383857532561585377}
   bannerColor: {fileID: 8800990507688001053}
+  cardBorder: {fileID: 1036224285906281013}
+  currentCard: []
+  currentID: 0
+  id: 0
+  manaCost: 0
+  classification: 
+  cardName: 
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
+  cardDescription: 
+  isSelected: 0
+--- !u!114 &964034465639075883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577786865771584239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a3ad2ebc46d6748a98308db2554ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useMenu: {fileID: 1553890921607297710}
+  combatSystem: {fileID: 0}
+  enemyStatus: {fileID: 0}
+  enemyHealth: {fileID: 0}
+  cardToSort: {fileID: 5700276190055355664}
+  confirmButton: {fileID: 0}
+  currentStatus: 
+  type: 
+--- !u!114 &1553890921607297710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577786865771584239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf52be30d9dc9694694f1af9211c3c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useScreen: {fileID: 1055272074785446759}
+  flipButton: {fileID: 2567138303622998678}
+  button: {fileID: 6633781675426327134}
+  isUsingCard: 0
+  isCanceling: 0
 --- !u!1 &6604051143909089862
 GameObject:
   m_ObjectHideFlags: 0

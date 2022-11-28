@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 3
   classification: Offensive
   cardName: Tail Whip
-  value: 5
+  attackValue: 5
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 5 <color=red>damage</color>
   cardImage: {fileID: 21300000, guid: 6858a15e5082cf34b9ee3167e90403d3, type: 3}

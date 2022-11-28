@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.XR;
+using Newtonsoft.Json.Linq;
 
 /// <summary>
 /// ============================================ Mostly finished Class ================================================
@@ -13,6 +14,15 @@ using UnityEngine.XR;
 /// </summary>
 public class CurrentCard : MonoBehaviour
 {
+    public Sprite cardImage;
+    public Image image;
+    public TMP_Text manaCostText;
+    public TMP_Text nameText;
+    public TMP_Text classificationText;
+    public TMP_Text descriptionText;
+    public Image bannerColor;
+
+    [SerializeField] private Image cardBorder;
 
     public List<CardBaseObject> currentCard = new List<CardBaseObject>();
 
@@ -22,17 +32,16 @@ public class CurrentCard : MonoBehaviour
     public int manaCost;
     public string classification;
     public string cardName;
-    public int value;
+    public int attackValue;
+    public int defenseValue;
+    public int dodgeValue;
+    public string status;
+    public int statusQuanity;
     public string cardDescription;
 
-    public Sprite cardImage;
+    public bool isSelected;
 
-    public Image image;
-    public TMP_Text manaCostText;
-    public TMP_Text nameText;
-    public TMP_Text classificationText;
-    public TMP_Text descriptionText;
-    public Image bannerColor;
+
 
     void Start()
     {
@@ -48,6 +57,11 @@ public class CurrentCard : MonoBehaviour
         }
     }
 
+    public void setSelectionBool(bool boolean)
+    {
+        isSelected = boolean;
+    }
+
     void Update()
     {
         if (transform.parent.tag == "Player")
@@ -60,7 +74,11 @@ public class CurrentCard : MonoBehaviour
             manaCost = currentCard[0].manaCost;
             cardName = currentCard[0].cardName;
             classification = currentCard[0].classification;
-            value = currentCard[0].value;
+            attackValue = currentCard[0].attackValue;
+            defenseValue = currentCard[0].defenseValue;
+            dodgeValue = currentCard[0].dodgeValue;
+            status = currentCard[0].status;
+            statusQuanity = currentCard[0].statusQuanity;
             cardDescription = currentCard[0].cardDescription;
             image.sprite = currentCard[0].cardImage;
 
@@ -96,7 +114,11 @@ public class CurrentCard : MonoBehaviour
             manaCost = currentCard[0].manaCost;
             cardName = currentCard[0].cardName;
             classification = currentCard[0].classification;
-            value = currentCard[0].value;
+            attackValue = currentCard[0].attackValue;
+            defenseValue = currentCard[0].defenseValue;
+            dodgeValue = currentCard[0].dodgeValue;
+            status = currentCard[0].status;
+            statusQuanity = currentCard[0].statusQuanity;
             cardDescription = currentCard[0].cardDescription;
             image.sprite = currentCard[0].cardImage;
 
@@ -120,7 +142,16 @@ public class CurrentCard : MonoBehaviour
             nameText.text = "" + cardName;
             classificationText.text = "" + classification;
             descriptionText.text = "" + cardDescription;
+            if (isSelected)
+            {
+                //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 15, this.transform.position.z);
+                cardBorder.color = Color.red;
+            }
+            else
+            {
+                //this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - 15, this.transform.position.z);
+                cardBorder.color = Color.black;
+            }
         }
-        
     }
 }

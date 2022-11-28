@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 2
   classification: Status
   cardName: Poison Gas
-  value: 0
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: Poison
+  statusQuanity: 5
   cardDescription: Apply 5 <color=purple>poison</color>
   cardImage: {fileID: 21300000, guid: f65023889763c7644b5579f0b019da6b, type: 3}

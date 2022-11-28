@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 5
   classification: Defensive
   cardName: Limbo!
-  value: 6
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 6
+  status: 
+  statusQuanity: 0
   cardDescription: Applies 6 <color=white>dodge</color>
   cardImage: {fileID: 21300000, guid: 256205b9c6ca12c45ab7762da8a65631, type: 3}

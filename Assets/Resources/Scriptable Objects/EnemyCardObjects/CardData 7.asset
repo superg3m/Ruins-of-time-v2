@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 7
   manaCost: 6
-  classification: Offensive
+  classification: Status
   cardName: Slam
-  value: 6
+  attackValue: 6
+  defenseValue: 0
+  dodgeValue: 0
+  status: Vulnerable
+  statusQuanity: 1
   cardDescription: Deal 6 <color=red>damage</color> and set status <color=yellow>vulnerable</color>
   cardImage: {fileID: 21300000, guid: 5659b073e19871d4da7394b6456da365, type: 3}

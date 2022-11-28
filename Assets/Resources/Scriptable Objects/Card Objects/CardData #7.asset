@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 6
   classification: Offensive
   cardName: Bull Rush
-  value: 8
+  attackValue: 8
+  defenseValue: 0
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Deal 8 <color=red>damage</color>
   cardImage: {fileID: 21300000, guid: 256205b9c6ca12c45ab7762da8a65631, type: 3}

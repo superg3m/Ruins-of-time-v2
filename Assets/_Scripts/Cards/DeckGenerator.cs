@@ -17,7 +17,7 @@ public class DeckGenerator : MonoBehaviour
 
     private CardBaseObject[] cache;
 
-    public CardBaseObject[] GenerateDeck(string type)
+    public CardBaseObject[] generateDeck(string type)
     {
         if (type == "Player")
         {

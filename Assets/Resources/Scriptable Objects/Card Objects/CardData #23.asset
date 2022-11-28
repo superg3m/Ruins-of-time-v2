@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 4
   classification: Defensive
   cardName: Defend
-  value: 3
+  attackValue: 0
+  defenseValue: 7
+  dodgeValue: 0
+  status: 
+  statusQuanity: 0
   cardDescription: Applies 7 <color=blue>block</color>
   cardImage: {fileID: 21300000, guid: 256205b9c6ca12c45ab7762da8a65631, type: 3}

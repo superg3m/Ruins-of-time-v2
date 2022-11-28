@@ -16,7 +16,11 @@ MonoBehaviour:
   manaCost: 7
   classification: Status
   cardName: Blessed Warrior
-  value: 3
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 0
+  status: Retain Block
+  statusQuanity: 3
   cardDescription: Add 3 points of <color=blue>block</color> to your next defense
     phase.
   cardImage: {fileID: 21300000, guid: a643be96b79a37e49ae7d014f92ed120, type: 3}

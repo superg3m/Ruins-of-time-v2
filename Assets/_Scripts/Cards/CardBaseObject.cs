@@ -19,7 +19,11 @@ public class CardBaseObject : ScriptableObject
     public int manaCost;
     public string classification;
     public string cardName;
-    public int value;
+    public int attackValue;
+    public int defenseValue;
+    public int dodgeValue;
+    public string status;
+    public int statusQuanity;
     public string cardDescription;
     public Sprite cardImage;
 }

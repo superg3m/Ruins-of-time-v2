@@ -16,6 +16,10 @@ MonoBehaviour:
   manaCost: 2
   classification: Defensive
   cardName: Side Step
-  value: 4
+  attackValue: 0
+  defenseValue: 0
+  dodgeValue: 4
+  status: 
+  statusQuanity: 0
   cardDescription: Applies 4 <color=white>dodge</color>
   cardImage: {fileID: 21300000, guid: 256205b9c6ca12c45ab7762da8a65631, type: 3}

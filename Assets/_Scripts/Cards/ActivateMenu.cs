@@ -20,6 +20,7 @@ public class ActivateMenu : MonoBehaviour
     }
     public void ActivateCard()
     {
+        
         if (isShowingUseButton)
         {
             useButton.transform.SetAsFirstSibling();
@@ -33,4 +34,15 @@ public class ActivateMenu : MonoBehaviour
             cardBorder.color = Color.black;
         }
     }
+
+    private void OnEnable()
+    {
+        //EventTesting.onHit += printRand; 
+    }
+
+    public void printRand()
+    {
+        Debug.Log("Loud and clear!");
+    }
+
 }
