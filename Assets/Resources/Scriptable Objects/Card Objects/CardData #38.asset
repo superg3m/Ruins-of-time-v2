@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc00305e020d84cacd9311ba682cc6, type: 3}
   m_Name: CardData #38
   m_EditorClassIdentifier: 
-  cardID: 38
+  cardID: 34
   manaCost: 4
   classification: Defensive
   cardName: Defend

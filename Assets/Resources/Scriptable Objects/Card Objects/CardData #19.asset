@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc00305e020d84cacd9311ba682cc6, type: 3}
   m_Name: CardData #19
   m_EditorClassIdentifier: 
-  cardID: 19
+  cardID: 18
   manaCost: 6
   classification: Status
   cardName: Cold Iron
