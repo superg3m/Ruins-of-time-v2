@@ -75,16 +75,21 @@ public class DeckSize : MonoBehaviour
                 Destroy(displayDeckSize[i]);
             }
             cardCount = 0;
-            subtractXBy = .5f;
+            subtractXBy = 0.5f;
             displayDeckSize.Clear();
             for (int i = 0; i < deckSize; i++)
             {
-                subtractXBy -= 0;
+                // subtractXBy -= 0;
                 displayDeckSize.Add(Instantiate(backCoverPrefab, spawnPoint.position, spawnPoint.rotation, deckPos.transform));
                 spawnPoint.transform.position = new Vector3((spawnPoint.transform.position.x) - subtractXBy, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
                 cardCount++;
             }
-            buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
+
+						if (tag == "Player")
+						{
+								buttonPos.transform.position = new Vector3(spawnPoint.transform.position.x, buttonPos.transform.position.y, buttonPos.transform.position.z);
+						}
+
             spawnPoint.transform.position = originalSpawnPoint.transform.position;
         }
     }
